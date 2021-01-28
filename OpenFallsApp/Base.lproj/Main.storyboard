@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OpenFallsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PersonFallDarkColor" translatesAutoresizingMaskIntoConstraints="NO" id="P1t-LA-osH">
+                                <rect key="frame" x="79.333333333333329" y="96.000000000000014" width="216.33333333333337" height="162.33333333333337"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME TO THE OPEN FALLS APP! PLEASE ACCESS OPENFALLS ON YOUR APPLE WATCH." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUh-nL-YyQ">
+                                <rect key="frame" x="26.666666666666657" y="331.66666666666669" width="321.66666666666674" height="231.66666666666669"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="P1t-LA-osH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3rX-f6-1v0"/>
+                            <constraint firstItem="P1t-LA-osH" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.221271" id="ADv-De-xsn"/>
+                            <constraint firstItem="P1t-LA-osH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52" id="M1E-oc-feD"/>
+                            <constraint firstItem="P1t-LA-osH" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.577295" id="PvO-sF-Y27"/>
+                            <constraint firstItem="RUh-nL-YyQ" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.216381" constant="73.136919315403418" id="biK-RA-Gwy"/>
+                            <constraint firstItem="RUh-nL-YyQ" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.857488" id="f5q-2L-5Mm"/>
+                            <constraint firstItem="RUh-nL-YyQ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="36.5" id="xJ9-VV-xDB"/>
+                            <constraint firstItem="RUh-nL-YyQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xvR-bl-uwn"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11.25" y="33.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="PersonFallDarkColor" width="39.5" height="39.5"/>
+    </resources>
+</document>

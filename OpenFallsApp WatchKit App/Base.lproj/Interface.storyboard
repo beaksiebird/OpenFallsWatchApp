@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Imf-vr-arD">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17500"/>
+    </dependencies>
+    <scenes>
+        <!--launchScreen-->
+        <scene sceneID="Wyw-aF-eeI">
+            <objects>
+                <controller identifier="launchScreen" spacing="10" id="Imf-vr-arD" customClass="InterfaceController" customModule="OpenFalls_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="OpenFalls" textAlignment="center" baselineAdjustment="alignCenters" id="NXg-lN-BjP">
+                            <color key="textColor" red="0.093689919580000003" green="0.19724447110000001" blue="0.64122208999999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <button alignment="center" verticalAlignment="center" id="Fab-nt-Eqa">
+                            <group key="contentGroup" width="134" alignment="left" contentMode="scaleAspectFit" layout="vertical" id="h8e-AO-UOv">
+                                <items>
+                                    <imageView alignment="center" image="PersonIcon" id="DqJ-b2-fpJ"/>
+                                </items>
+                                <color key="backgroundColor" red="0.65120141789999997" green="0.33811684390000002" blue="0.37931861579999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </group>
+                            <connections>
+                                <segue destination="tTK-2J-5yB" kind="push" id="gdh-AX-rly"/>
+                            </connections>
+                        </button>
+                        <label height="20" alignment="center" verticalAlignment="center" text="Patient Access" textAlignment="center" baselineAdjustment="alignCenters" id="OXt-Zg-7B0">
+                            <color key="textColor" red="0.65120141789999997" green="0.33811684390000002" blue="0.37931861579999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </label>
+                        <button alignment="center" verticalAlignment="center" id="eKm-wT-fpJ">
+                            <group key="contentGroup" width="134" alignment="left" layout="vertical" id="nC0-jd-TMX">
+                                <items>
+                                    <imageView alignment="center" image="AdminIcon" contentMode="scaleAspectFit" id="8L2-B8-Sgj"/>
+                                </items>
+                                <color key="backgroundColor" red="0.97895862140000001" green="1" blue="0.54371200509999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </group>
+                            <connections>
+                                <segue destination="0Y9-aW-zpA" kind="push" id="nB7-XI-qv0"/>
+                            </connections>
+                        </button>
+                        <label alignment="center" verticalAlignment="center" text="Admin Access" textAlignment="center" baselineAdjustment="alignCenters" id="COf-68-au0">
+                            <color key="textColor" red="0.97895862140000001" green="1" blue="0.54371200509999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="adminButton" destination="eKm-wT-fpJ" id="p8p-Au-UFi"/>
+                        <outlet property="patientButton" destination="Fab-nt-Eqa" id="jOZ-vF-k5u"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="348"/>
+        </scene>
+        <!--homeScreen-->
+        <scene sceneID="chH-s8-mfA">
+            <objects>
+                <controller identifier="homeScreen" id="tTK-2J-5yB" customClass="HomeInterfaceController" customModule="OpenFalls_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="center" spacing="0.0" id="DSU-0b-nMD">
+                            <items>
+                                <label width="91" height="42" alignment="center" verticalAlignment="center" text="0 falls today" textAlignment="left" baselineAdjustment="alignCenters" numberOfLines="0" id="i0m-6F-W8x">
+                                    <color key="textColor" red="0.65120141789999997" green="0.33811684390000002" blue="0.37931861579999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                                <imageView width="41" height="42" alignment="center" verticalAlignment="center" image="PersonFallIcon" id="SKl-r1-gyj"/>
+                            </items>
+                        </group>
+                        <label width="155" height="36" alignment="center" verticalAlignment="center" text="4 falls this month" textAlignment="center" numberOfLines="0" id="rGt-3F-6Bt">
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </label>
+                        <group width="1" alignment="left" verticalAlignment="bottom" spacing="3" id="kr4-b4-Ckd">
+                            <items>
+                                <button alignment="center" verticalAlignment="center" id="y2y-YC-SGS">
+                                    <group key="contentGroup" width="64" height="56" alignment="left" backgroundImage="PersonFallDarkColor" contentMode="center" id="ryN-XZ-8RM">
+                                        <color key="backgroundColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </group>
+                                    <connections>
+                                        <action selector="fallButton" destination="tTK-2J-5yB" id="tkF-9g-8gB"/>
+                                        <segue destination="o54-JB-7K0" kind="push" id="t8J-1U-MLB"/>
+                                    </connections>
+                                </button>
+                                <button alignment="center" verticalAlignment="center" id="iXZ-jZ-zhI">
+                                    <group key="contentGroup" width="64" height="56" alignment="left" backgroundImage="MedicingIconDarkColor" contentMode="center" id="tKq-TM-S0o">
+                                        <color key="backgroundColor" red="0.2216476218" green="0.43813131309999997" blue="0.17251136989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </group>
+                                    <connections>
+                                        <action selector="medicineButton" destination="tTK-2J-5yB" id="4Hr-Cd-ZxL"/>
+                                        <segue destination="mfx-wi-bN0" kind="push" id="o1U-uo-mHr"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" spacing="1" id="B34-0J-Z2f">
+                            <items>
+                                <label width="91" height="43" alignment="center" verticalAlignment="center" text="3.5 hours since meds" textAlignment="left" baselineAdjustment="alignCenters" numberOfLines="0" id="Kh0-yM-p5h">
+                                    <color key="textColor" red="0.19219047619999999" green="0.63146365500000001" blue="0.0" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                                <imageView width="41" height="42" alignment="center" verticalAlignment="center" image="MedicineIcon" id="y1Y-rh-qjN"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="fallsPerDay" destination="i0m-6F-W8x" id="ber-e5-AVL"/>
+                        <outlet property="fallsPerMonth" destination="rGt-3F-6Bt" id="8a0-oe-DVV"/>
+                        <outlet property="hoursSinceMeds" destination="Kh0-yM-p5h" id="xPA-7k-XL6"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="492" y="348"/>
+        </scene>
+        <!--reportMedicineScreen-->
+        <scene sceneID="Z5C-dq-Bag">
+            <objects>
+                <controller identifier="reportMedicineScreen" id="mfx-wi-bN0" customClass="ReportMedicineInterfaceController" customModule="OpenFallsApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <imageView width="76" height="62" alignment="center" image="MedicineIcon" contentMode="scaleAspectFit" id="b7f-Ko-90e"/>
+                        <group alignment="center" verticalAlignment="center" layout="vertical" id="Q4B-YZ-Glf">
+                            <items>
+                                <label alignment="center" text="Report medications" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="0" id="2T4-6q-eCc">
+                                    <color key="textColor" red="0.2216476218" green="0.43813131309999997" blue="0.17251136989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                                <label alignment="center" text="Tap microphone to record" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="0" id="bCQ-lm-rSy">
+                                    <color key="textColor" red="0.2216476218" green="0.43813131309999997" blue="0.17251136989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                                <button alignment="center" verticalAlignment="center" id="PSe-WT-gbH">
+                                    <group key="contentGroup" width="64" height="56" alignment="left" backgroundImage="MicrophoneIcon" contentMode="center" id="ccm-hj-Aud">
+                                        <color key="backgroundColor" red="0.2216476218" green="0.43813131309999997" blue="0.17251136989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </group>
+                                    <connections>
+                                        <action selector="recordMeds" destination="mfx-wi-bN0" id="iB5-hL-4m8"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="763" y="348"/>
+        </scene>
+        <!--reportFallScreen-->
+        <scene sceneID="Xgw-MK-Ape">
+            <objects>
+                <controller identifier="reportFallScreen" id="o54-JB-7K0" customClass="ReportFallInterfaceController" customModule="OpenFallsApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <imageView width="76" height="62" alignment="center" image="PersonFallIcon" contentMode="scaleAspectFit" id="PX1-v0-jup"/>
+                        <group width="1" alignment="left" layout="vertical" id="I4a-HU-zXq">
+                            <items>
+                                <label alignment="center" verticalAlignment="bottom" text="Tap ambulance to call 911" textAlignment="center" numberOfLines="0" id="QV2-7o-gI1">
+                                    <color key="textColor" red="0.60376442850000001" green="0.046333316460000003" blue="0.048188038920000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                                <label alignment="center" verticalAlignment="center" text="Tap microphone to report a fall" textAlignment="center" numberOfLines="0" id="kxc-ma-n6P">
+                                    <color key="textColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="134" alignment="center" verticalAlignment="bottom" spacing="3" id="4QI-R1-wRg">
+                            <items>
+                                <button alignment="center" verticalAlignment="center" id="CSC-qk-C8S">
+                                    <group key="contentGroup" width="64" height="56" alignment="left" backgroundImage="MicrophoneIcon" contentMode="center" id="N6G-25-ngF">
+                                        <color key="backgroundColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </group>
+                                    <connections>
+                                        <action selector="recordFall" destination="o54-JB-7K0" id="eO9-WX-jiX"/>
+                                    </connections>
+                                </button>
+                                <button alignment="center" verticalAlignment="center" id="bLS-eg-BAv">
+                                    <group key="contentGroup" width="64" height="56" alignment="left" backgroundImage="911Icon" contentMode="center" id="hM9-NW-ZXK">
+                                        <color key="backgroundColor" red="0.60376442850000001" green="0.046333316460000003" blue="0.048188038920000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </group>
+                                    <connections>
+                                        <action selector="callHelp" destination="o54-JB-7K0" id="Ucx-Ri-0Ot"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="492" y="748"/>
+        </scene>
+        <!--adminScreen-->
+        <scene sceneID="anL-3v-sNI">
+            <objects>
+                <controller identifier="adminScreen" spacing="43" id="0Y9-aW-zpA" customClass="AdminInterfaceController" customModule="OpenFallsApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" alignment="left" text="ADMIN USE ONLY" textAlignment="center" id="m4o-GO-iuL">
+                            <color key="textColor" red="0.97895862140000001" green="1" blue="0.54371200509999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <textField width="1" alignment="left" placeholder="STUDY ID" id="ut6-BI-ovq">
+                            <connections>
+                                <action selector="enterStudyID:" destination="0Y9-aW-zpA" id="MPn-tf-vOG"/>
+                            </connections>
+                        </textField>
+                        <button alignment="center" id="w2J-7k-tHc">
+                            <group key="contentGroup" width="64" height="56" alignment="left" backgroundImage="UploadIcon" contentMode="center" layout="vertical" id="eer-nT-0ya">
+                                <color key="backgroundColor" red="0.97895862140000001" green="1" blue="0.54371200509999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                            </group>
+                            <connections>
+                                <action selector="uploadData" destination="0Y9-aW-zpA" id="hGy-bT-Jhh"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="studyIDText" destination="ut6-BI-ovq" id="Fpb-Fx-vcs"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="748"/>
+        </scene>
+        <!--notificationScreenOne-->
+        <scene sceneID="sID-7r-nj3">
+            <objects>
+                <controller identifier="notificationScreenOne" id="HzQ-tx-Pl1" customClass="NotificationOneInterfaceController" customModule="OpenFallsApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <imageView width="84" height="84" alignment="center" image="PersonFallIcon" contentMode="scaleAspectFit" id="VdR-43-fwR"/>
+                        <label width="136" alignment="center" text="Did you fall today?" textAlignment="center" numberOfLines="0" id="ksF-So-IL1">
+                            <color key="textColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </label>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="DX1-xi-8nb">
+                            <items>
+                                <button width="64" height="56" alignment="center" verticalAlignment="center" title="YES" id="Eop-fa-fsv">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="yesButton" destination="HzQ-tx-Pl1" id="Zk3-O9-vRs"/>
+                                    </connections>
+                                </button>
+                                <button width="64" height="56" alignment="center" verticalAlignment="center" title="NO" id="lDx-gA-GKX">
+                                    <connections>
+                                        <action selector="noButton" destination="HzQ-tx-Pl1" id="db9-oP-bUe"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="995" y="725"/>
+        </scene>
+        <!--notificationScreenTwo-->
+        <scene sceneID="vcD-H8-MDF">
+            <objects>
+                <controller identifier="notificationScreenTwo" id="eOJ-uR-BwT" customClass="NotificationTwoInterfaceController" customModule="OpenFallsApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <imageView width="84" height="84" alignment="center" image="PersonFallIcon" id="h5J-qV-J9G"/>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="CqI-dZ-Dwj">
+                            <items>
+                                <picker width="64" height="56" alignment="center" verticalAlignment="center" focusStyle="sequence" id="e1a-dq-Ni5">
+                                    <connections>
+                                        <action selector="pickerDidChange:" destination="eOJ-uR-BwT" id="A6k-NO-s5A"/>
+                                    </connections>
+                                </picker>
+                                <button alignment="center" verticalAlignment="center" id="rdO-Ie-95g">
+                                    <group key="contentGroup" width="64" height="55" alignment="left" backgroundImage="UploadIcon" contentMode="center" id="W4f-oR-uFk">
+                                        <color key="backgroundColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </group>
+                                    <connections>
+                                        <action selector="uploadFall" destination="eOJ-uR-BwT" id="GRs-vf-SyT"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label width="135" alignment="center" verticalAlignment="center" text="How many times did you fall?" textAlignment="center" numberOfLines="0" id="Xnb-AA-O3i">
+                            <color key="textColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="timesFellPicker" destination="e1a-dq-Ni5" id="Hk4-mJ-dvH"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="995" y="1060"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="5as-xv-4HN">
+            <objects>
+                <notificationController id="LwL-b5-7eZ" customClass="NotificationController" customModule="OpenFallsApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Tap here to report a fall" textAlignment="center" numberOfLines="0" id="sOx-0g-77N">
+                            <color key="textColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </label>
+                    </items>
+                    <notificationCategory key="notificationCategory" id="wCB-gP-486">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sashColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </notificationCategory>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="sOx-0g-77N" id="GxJ-2S-1Bp"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="723" y="1039"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="911Icon" width="37" height="32"/>
+        <image name="AdminIcon" width="25" height="25"/>
+        <image name="MedicineIcon" width="27" height="27.5"/>
+        <image name="MedicingIconDarkColor" width="27" height="27.5"/>
+        <image name="MicrophoneIcon" width="31.5" height="31.5"/>
+        <image name="PersonFallDarkColor" width="39.5" height="39.5"/>
+        <image name="PersonFallIcon" width="39.5" height="39.5"/>
+        <image name="PersonIcon" width="26.5" height="26.5"/>
+        <image name="UploadIcon" width="25" height="25"/>
+    </resources>
+</document>

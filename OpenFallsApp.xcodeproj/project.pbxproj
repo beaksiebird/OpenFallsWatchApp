@@ -1,0 +1,671 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B25774625C0A1A0001FEED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25774525C0A1A0001FEED6 /* AppDelegate.swift */; };
+		3B25774825C0A1A0001FEED6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25774725C0A1A0001FEED6 /* SceneDelegate.swift */; };
+		3B25774A25C0A1A0001FEED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25774925C0A1A0001FEED6 /* ViewController.swift */; };
+		3B25774D25C0A1A0001FEED6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B25774B25C0A1A0001FEED6 /* Main.storyboard */; };
+		3B25774F25C0A1A0001FEED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B25774E25C0A1A0001FEED6 /* Assets.xcassets */; };
+		3B25775225C0A1A0001FEED6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B25775025C0A1A0001FEED6 /* LaunchScreen.storyboard */; };
+		3B25775725C0A1A0001FEED6 /* OpenFallsApp WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3B25775625C0A1A0001FEED6 /* OpenFallsApp WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3B25775D25C0A1A0001FEED6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B25775B25C0A1A0001FEED6 /* Interface.storyboard */; };
+		3B25775F25C0A1A0001FEED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B25775E25C0A1A0001FEED6 /* Assets.xcassets */; };
+		3B25776625C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3B25776525C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3B25776B25C0A1A0001FEED6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25776A25C0A1A0001FEED6 /* InterfaceController.swift */; };
+		3B25776D25C0A1A0001FEED6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25776C25C0A1A0001FEED6 /* ExtensionDelegate.swift */; };
+		3B25776F25C0A1A0001FEED6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25776E25C0A1A0001FEED6 /* NotificationController.swift */; };
+		3B25777125C0A1A0001FEED6 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25777025C0A1A0001FEED6 /* ComplicationController.swift */; };
+		3B25777325C0A1A1001FEED6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B25777225C0A1A1001FEED6 /* Assets.xcassets */; };
+		3B25778725C0A372001FEED6 /* AdminInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25778625C0A372001FEED6 /* AdminInterfaceController.swift */; };
+		3B25778C25C0A38B001FEED6 /* HomeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25778B25C0A38B001FEED6 /* HomeInterfaceController.swift */; };
+		3B25779125C0A3DF001FEED6 /* ReportFallInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25779025C0A3DF001FEED6 /* ReportFallInterfaceController.swift */; };
+		3B25779625C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25779525C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift */; };
+		3B25779B25C0A41F001FEED6 /* NotificationOneInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25779A25C0A41F001FEED6 /* NotificationOneInterfaceController.swift */; };
+		3B2577A025C0A433001FEED6 /* NotificationTwoInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25779F25C0A433001FEED6 /* NotificationTwoInterfaceController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3B25775825C0A1A0001FEED6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B25773A25C0A1A0001FEED6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B25775525C0A1A0001FEED6;
+			remoteInfo = "OpenFallsApp WatchKit App";
+		};
+		3B25776725C0A1A0001FEED6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B25773A25C0A1A0001FEED6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B25776425C0A1A0001FEED6;
+			remoteInfo = "OpenFallsApp WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3B25777B25C0A1A1001FEED6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3B25776625C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B25777F25C0A1A1001FEED6 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				3B25775725C0A1A0001FEED6 /* OpenFallsApp WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3B25774225C0A1A0001FEED6 /* OpenFallsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFallsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B25774525C0A1A0001FEED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3B25774725C0A1A0001FEED6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3B25774925C0A1A0001FEED6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3B25774C25C0A1A0001FEED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3B25774E25C0A1A0001FEED6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B25775125C0A1A0001FEED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3B25775325C0A1A0001FEED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B25775625C0A1A0001FEED6 /* OpenFallsApp WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenFallsApp WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B25775C25C0A1A0001FEED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		3B25775E25C0A1A0001FEED6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B25776025C0A1A0001FEED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B25776525C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "OpenFallsApp WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B25776A25C0A1A0001FEED6 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		3B25776C25C0A1A0001FEED6 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		3B25776E25C0A1A0001FEED6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		3B25777025C0A1A0001FEED6 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		3B25777225C0A1A1001FEED6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B25777425C0A1A1001FEED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B25777525C0A1A1001FEED6 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		3B25778625C0A372001FEED6 /* AdminInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminInterfaceController.swift; sourceTree = "<group>"; };
+		3B25778B25C0A38B001FEED6 /* HomeInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInterfaceController.swift; sourceTree = "<group>"; };
+		3B25779025C0A3DF001FEED6 /* ReportFallInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFallInterfaceController.swift; sourceTree = "<group>"; };
+		3B25779525C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMedicineInterfaceController.swift; sourceTree = "<group>"; };
+		3B25779A25C0A41F001FEED6 /* NotificationOneInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationOneInterfaceController.swift; sourceTree = "<group>"; };
+		3B25779F25C0A433001FEED6 /* NotificationTwoInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTwoInterfaceController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B25773F25C0A1A0001FEED6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B25776225C0A1A0001FEED6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B25773925C0A1A0001FEED6 = {
+			isa = PBXGroup;
+			children = (
+				3B25774425C0A1A0001FEED6 /* OpenFallsApp */,
+				3B25775A25C0A1A0001FEED6 /* OpenFallsApp WatchKit App */,
+				3B25776925C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension */,
+				3B25774325C0A1A0001FEED6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B25774325C0A1A0001FEED6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B25774225C0A1A0001FEED6 /* OpenFallsApp.app */,
+				3B25775625C0A1A0001FEED6 /* OpenFallsApp WatchKit App.app */,
+				3B25776525C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B25774425C0A1A0001FEED6 /* OpenFallsApp */ = {
+			isa = PBXGroup;
+			children = (
+				3B25774525C0A1A0001FEED6 /* AppDelegate.swift */,
+				3B25774725C0A1A0001FEED6 /* SceneDelegate.swift */,
+				3B25774925C0A1A0001FEED6 /* ViewController.swift */,
+				3B25774B25C0A1A0001FEED6 /* Main.storyboard */,
+				3B25774E25C0A1A0001FEED6 /* Assets.xcassets */,
+				3B25775025C0A1A0001FEED6 /* LaunchScreen.storyboard */,
+				3B25775325C0A1A0001FEED6 /* Info.plist */,
+			);
+			path = OpenFallsApp;
+			sourceTree = "<group>";
+		};
+		3B25775A25C0A1A0001FEED6 /* OpenFallsApp WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				3B25775B25C0A1A0001FEED6 /* Interface.storyboard */,
+				3B25775E25C0A1A0001FEED6 /* Assets.xcassets */,
+				3B25776025C0A1A0001FEED6 /* Info.plist */,
+			);
+			path = "OpenFallsApp WatchKit App";
+			sourceTree = "<group>";
+		};
+		3B25776925C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3B25776A25C0A1A0001FEED6 /* InterfaceController.swift */,
+				3B25776C25C0A1A0001FEED6 /* ExtensionDelegate.swift */,
+				3B25776E25C0A1A0001FEED6 /* NotificationController.swift */,
+				3B25777025C0A1A0001FEED6 /* ComplicationController.swift */,
+				3B25777225C0A1A1001FEED6 /* Assets.xcassets */,
+				3B25777425C0A1A1001FEED6 /* Info.plist */,
+				3B25777525C0A1A1001FEED6 /* PushNotificationPayload.apns */,
+				3B25778625C0A372001FEED6 /* AdminInterfaceController.swift */,
+				3B25778B25C0A38B001FEED6 /* HomeInterfaceController.swift */,
+				3B25779025C0A3DF001FEED6 /* ReportFallInterfaceController.swift */,
+				3B25779525C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift */,
+				3B25779A25C0A41F001FEED6 /* NotificationOneInterfaceController.swift */,
+				3B25779F25C0A433001FEED6 /* NotificationTwoInterfaceController.swift */,
+			);
+			path = "OpenFallsApp WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B25774125C0A1A0001FEED6 /* OpenFallsApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B25778025C0A1A1001FEED6 /* Build configuration list for PBXNativeTarget "OpenFallsApp" */;
+			buildPhases = (
+				3B25773E25C0A1A0001FEED6 /* Sources */,
+				3B25773F25C0A1A0001FEED6 /* Frameworks */,
+				3B25774025C0A1A0001FEED6 /* Resources */,
+				3B25777F25C0A1A1001FEED6 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B25775925C0A1A0001FEED6 /* PBXTargetDependency */,
+			);
+			name = OpenFallsApp;
+			productName = OpenFallsApp;
+			productReference = 3B25774225C0A1A0001FEED6 /* OpenFallsApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3B25775525C0A1A0001FEED6 /* OpenFallsApp WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B25777C25C0A1A1001FEED6 /* Build configuration list for PBXNativeTarget "OpenFallsApp WatchKit App" */;
+			buildPhases = (
+				3B25775425C0A1A0001FEED6 /* Resources */,
+				3B25777B25C0A1A1001FEED6 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B25776825C0A1A0001FEED6 /* PBXTargetDependency */,
+			);
+			name = "OpenFallsApp WatchKit App";
+			productName = "OpenFallsApp WatchKit App";
+			productReference = 3B25775625C0A1A0001FEED6 /* OpenFallsApp WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		3B25776425C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B25777825C0A1A1001FEED6 /* Build configuration list for PBXNativeTarget "OpenFallsApp WatchKit Extension" */;
+			buildPhases = (
+				3B25776125C0A1A0001FEED6 /* Sources */,
+				3B25776225C0A1A0001FEED6 /* Frameworks */,
+				3B25776325C0A1A0001FEED6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OpenFallsApp WatchKit Extension";
+			productName = "OpenFallsApp WatchKit Extension";
+			productReference = 3B25776525C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B25773A25C0A1A0001FEED6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					3B25774125C0A1A0001FEED6 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					3B25775525C0A1A0001FEED6 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					3B25776425C0A1A0001FEED6 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 3B25773D25C0A1A0001FEED6 /* Build configuration list for PBXProject "OpenFallsApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3B25773925C0A1A0001FEED6;
+			productRefGroup = 3B25774325C0A1A0001FEED6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B25774125C0A1A0001FEED6 /* OpenFallsApp */,
+				3B25775525C0A1A0001FEED6 /* OpenFallsApp WatchKit App */,
+				3B25776425C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B25774025C0A1A0001FEED6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B25775225C0A1A0001FEED6 /* LaunchScreen.storyboard in Resources */,
+				3B25774F25C0A1A0001FEED6 /* Assets.xcassets in Resources */,
+				3B25774D25C0A1A0001FEED6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B25775425C0A1A0001FEED6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B25775F25C0A1A0001FEED6 /* Assets.xcassets in Resources */,
+				3B25775D25C0A1A0001FEED6 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B25776325C0A1A0001FEED6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B25777325C0A1A1001FEED6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B25773E25C0A1A0001FEED6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B25774A25C0A1A0001FEED6 /* ViewController.swift in Sources */,
+				3B25774625C0A1A0001FEED6 /* AppDelegate.swift in Sources */,
+				3B25774825C0A1A0001FEED6 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B25776125C0A1A0001FEED6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B25776F25C0A1A0001FEED6 /* NotificationController.swift in Sources */,
+				3B25779625C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift in Sources */,
+				3B25777125C0A1A0001FEED6 /* ComplicationController.swift in Sources */,
+				3B2577A025C0A433001FEED6 /* NotificationTwoInterfaceController.swift in Sources */,
+				3B25779125C0A3DF001FEED6 /* ReportFallInterfaceController.swift in Sources */,
+				3B25776D25C0A1A0001FEED6 /* ExtensionDelegate.swift in Sources */,
+				3B25779B25C0A41F001FEED6 /* NotificationOneInterfaceController.swift in Sources */,
+				3B25776B25C0A1A0001FEED6 /* InterfaceController.swift in Sources */,
+				3B25778C25C0A38B001FEED6 /* HomeInterfaceController.swift in Sources */,
+				3B25778725C0A372001FEED6 /* AdminInterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B25775925C0A1A0001FEED6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B25775525C0A1A0001FEED6 /* OpenFallsApp WatchKit App */;
+			targetProxy = 3B25775825C0A1A0001FEED6 /* PBXContainerItemProxy */;
+		};
+		3B25776825C0A1A0001FEED6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B25776425C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension */;
+			targetProxy = 3B25776725C0A1A0001FEED6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3B25774B25C0A1A0001FEED6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B25774C25C0A1A0001FEED6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3B25775025C0A1A0001FEED6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B25775125C0A1A0001FEED6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3B25775B25C0A1A0001FEED6 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B25775C25C0A1A0001FEED6 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B25777625C0A1A1001FEED6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3B25777725C0A1A1001FEED6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		3B25777925C0A1A1001FEED6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = MZ98WPC7GY;
+				INFOPLIST_FILE = "OpenFallsApp WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Beaksie.OpenFallsApp.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		3B25777A25C0A1A1001FEED6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = MZ98WPC7GY;
+				INFOPLIST_FILE = "OpenFallsApp WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Beaksie.OpenFallsApp.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		3B25777D25C0A1A1001FEED6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = MZ98WPC7GY;
+				IBSC_MODULE = OpenFallsApp_WatchKit_Extension;
+				INFOPLIST_FILE = "OpenFallsApp WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Beaksie.OpenFallsApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		3B25777E25C0A1A1001FEED6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = MZ98WPC7GY;
+				IBSC_MODULE = OpenFallsApp_WatchKit_Extension;
+				INFOPLIST_FILE = "OpenFallsApp WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Beaksie.OpenFallsApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		3B25778125C0A1A1001FEED6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = MZ98WPC7GY;
+				INFOPLIST_FILE = OpenFallsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Beaksie.OpenFallsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3B25778225C0A1A1001FEED6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = MZ98WPC7GY;
+				INFOPLIST_FILE = OpenFallsApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Beaksie.OpenFallsApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B25773D25C0A1A0001FEED6 /* Build configuration list for PBXProject "OpenFallsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B25777625C0A1A1001FEED6 /* Debug */,
+				3B25777725C0A1A1001FEED6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B25777825C0A1A1001FEED6 /* Build configuration list for PBXNativeTarget "OpenFallsApp WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B25777925C0A1A1001FEED6 /* Debug */,
+				3B25777A25C0A1A1001FEED6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B25777C25C0A1A1001FEED6 /* Build configuration list for PBXNativeTarget "OpenFallsApp WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B25777D25C0A1A1001FEED6 /* Debug */,
+				3B25777E25C0A1A1001FEED6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B25778025C0A1A1001FEED6 /* Build configuration list for PBXNativeTarget "OpenFallsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B25778125C0A1A1001FEED6 /* Debug */,
+				3B25778225C0A1A1001FEED6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B25773A25C0A1A0001FEED6 /* Project object */;
+}
