@@ -7,22 +7,57 @@
 
 import WatchKit
 import Foundation
+import UserNotifications
+import CoreLocation
 
 
-class InterfaceController: WKInterfaceController {
+
+//Data Points -> Date/Time Launched App
+
+
+class InterfaceController: WKInterfaceController, UNUserNotificationCenterDelegate {
+
+
     @IBOutlet weak var adminButton: WKInterfaceButton!
     
     @IBOutlet weak var patientButton: WKInterfaceButton!
+    
+
+ 
+        
+
+ 
     override func awake(withContext context: Any?) {
-        // Configure interface objects here.
+        initialDate()
+    
+        uploadFilesToAWS()
+    }
+
+    func initialDate() {
+        let date = Date()
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateStringLaunched = df.string(from: date)
+        print(dateStringLaunched)
+        
+        //Save this to documents directory
     }
     
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
+    func uploadFilesToAWS() {
+        //Upload everything in device directory 
+        
     }
+
+    
+    override func willActivate() {
+     
+
+    }
+
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
     }
 
+ 
 }

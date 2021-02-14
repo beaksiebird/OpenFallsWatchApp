@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E8E74E3077F661F81C8365F /* Pods_OpenFallsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADE10D46E490E273931E447 /* Pods_OpenFallsApp.framework */; };
 		3B25774625C0A1A0001FEED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25774525C0A1A0001FEED6 /* AppDelegate.swift */; };
 		3B25774825C0A1A0001FEED6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25774725C0A1A0001FEED6 /* SceneDelegate.swift */; };
 		3B25774A25C0A1A0001FEED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25774925C0A1A0001FEED6 /* ViewController.swift */; };
@@ -26,8 +27,9 @@
 		3B25778C25C0A38B001FEED6 /* HomeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25778B25C0A38B001FEED6 /* HomeInterfaceController.swift */; };
 		3B25779125C0A3DF001FEED6 /* ReportFallInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25779025C0A3DF001FEED6 /* ReportFallInterfaceController.swift */; };
 		3B25779625C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25779525C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift */; };
-		3B25779B25C0A41F001FEED6 /* NotificationOneInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25779A25C0A41F001FEED6 /* NotificationOneInterfaceController.swift */; };
-		3B2577A025C0A433001FEED6 /* NotificationTwoInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25779F25C0A433001FEED6 /* NotificationTwoInterfaceController.swift */; };
+		3B813EC025D76745006EEA8A /* DirectoryUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B813EBF25D76745006EEA8A /* DirectoryUpload.swift */; };
+		6D36B4C59176ADCDF4CC9C45 /* Pods_OpenFallsApp_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB97CC46A620FCB67A63892 /* Pods_OpenFallsApp_WatchKit_Extension.framework */; };
+		95D9CF0CED80D6607BDA37AB /* Pods_OpenFallsApp_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97177290D674C29908A898F2 /* Pods_OpenFallsApp_WatchKit_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0791E0D6933B95077A655DD7 /* Pods-OpenFallsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenFallsApp.debug.xcconfig"; path = "Target Support Files/Pods-OpenFallsApp/Pods-OpenFallsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		111988617136259A634EB54B /* Pods-OpenFallsApp WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenFallsApp WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-OpenFallsApp WatchKit App/Pods-OpenFallsApp WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		3B25774225C0A1A0001FEED6 /* OpenFallsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFallsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B25774525C0A1A0001FEED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B25774725C0A1A0001FEED6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,15 +101,30 @@
 		3B25778B25C0A38B001FEED6 /* HomeInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInterfaceController.swift; sourceTree = "<group>"; };
 		3B25779025C0A3DF001FEED6 /* ReportFallInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFallInterfaceController.swift; sourceTree = "<group>"; };
 		3B25779525C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMedicineInterfaceController.swift; sourceTree = "<group>"; };
-		3B25779A25C0A41F001FEED6 /* NotificationOneInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationOneInterfaceController.swift; sourceTree = "<group>"; };
-		3B25779F25C0A433001FEED6 /* NotificationTwoInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTwoInterfaceController.swift; sourceTree = "<group>"; };
+		3B813EBF25D76745006EEA8A /* DirectoryUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryUpload.swift; sourceTree = "<group>"; };
+		3EB97CC46A620FCB67A63892 /* Pods_OpenFallsApp_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenFallsApp_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ADE10D46E490E273931E447 /* Pods_OpenFallsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenFallsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97177290D674C29908A898F2 /* Pods_OpenFallsApp_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenFallsApp_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1FE975B774D73B9475521D3 /* Pods-OpenFallsApp WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenFallsApp WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-OpenFallsApp WatchKit App/Pods-OpenFallsApp WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		C234E8B0E1EE2D48293C2224 /* Pods-OpenFallsApp WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenFallsApp WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-OpenFallsApp WatchKit Extension/Pods-OpenFallsApp WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		C8C3012A8831BBD62A4E0472 /* Pods-OpenFallsApp WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenFallsApp WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-OpenFallsApp WatchKit Extension/Pods-OpenFallsApp WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		CD1EF651EDF2D2C0452FD827 /* Pods-OpenFallsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenFallsApp.release.xcconfig"; path = "Target Support Files/Pods-OpenFallsApp/Pods-OpenFallsApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1C15CD56B6997367ECFF59AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95D9CF0CED80D6607BDA37AB /* Pods_OpenFallsApp_WatchKit_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3B25773F25C0A1A0001FEED6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E8E74E3077F661F81C8365F /* Pods_OpenFallsApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D36B4C59176ADCDF4CC9C45 /* Pods_OpenFallsApp_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +146,8 @@
 				3B25775A25C0A1A0001FEED6 /* OpenFallsApp WatchKit App */,
 				3B25776925C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension */,
 				3B25774325C0A1A0001FEED6 /* Products */,
+				40767D8B1CEE3256E3224DE2 /* Pods */,
+				D43C4913F8C3875CAD6F54E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,21 +188,43 @@
 		3B25776925C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3B25776A25C0A1A0001FEED6 /* InterfaceController.swift */,
 				3B25776C25C0A1A0001FEED6 /* ExtensionDelegate.swift */,
-				3B25776E25C0A1A0001FEED6 /* NotificationController.swift */,
-				3B25777025C0A1A0001FEED6 /* ComplicationController.swift */,
-				3B25777225C0A1A1001FEED6 /* Assets.xcassets */,
-				3B25777425C0A1A1001FEED6 /* Info.plist */,
-				3B25777525C0A1A1001FEED6 /* PushNotificationPayload.apns */,
+				3B25776A25C0A1A0001FEED6 /* InterfaceController.swift */,
 				3B25778625C0A372001FEED6 /* AdminInterfaceController.swift */,
 				3B25778B25C0A38B001FEED6 /* HomeInterfaceController.swift */,
 				3B25779025C0A3DF001FEED6 /* ReportFallInterfaceController.swift */,
 				3B25779525C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift */,
-				3B25779A25C0A41F001FEED6 /* NotificationOneInterfaceController.swift */,
-				3B25779F25C0A433001FEED6 /* NotificationTwoInterfaceController.swift */,
+				3B25776E25C0A1A0001FEED6 /* NotificationController.swift */,
+				3B25777425C0A1A1001FEED6 /* Info.plist */,
+				3B25777525C0A1A1001FEED6 /* PushNotificationPayload.apns */,
+				3B25777025C0A1A0001FEED6 /* ComplicationController.swift */,
+				3B25777225C0A1A1001FEED6 /* Assets.xcassets */,
+				3B813EBF25D76745006EEA8A /* DirectoryUpload.swift */,
 			);
 			path = "OpenFallsApp WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		40767D8B1CEE3256E3224DE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0791E0D6933B95077A655DD7 /* Pods-OpenFallsApp.debug.xcconfig */,
+				CD1EF651EDF2D2C0452FD827 /* Pods-OpenFallsApp.release.xcconfig */,
+				A1FE975B774D73B9475521D3 /* Pods-OpenFallsApp WatchKit App.debug.xcconfig */,
+				111988617136259A634EB54B /* Pods-OpenFallsApp WatchKit App.release.xcconfig */,
+				C234E8B0E1EE2D48293C2224 /* Pods-OpenFallsApp WatchKit Extension.debug.xcconfig */,
+				C8C3012A8831BBD62A4E0472 /* Pods-OpenFallsApp WatchKit Extension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D43C4913F8C3875CAD6F54E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7ADE10D46E490E273931E447 /* Pods_OpenFallsApp.framework */,
+				97177290D674C29908A898F2 /* Pods_OpenFallsApp_WatchKit_App.framework */,
+				3EB97CC46A620FCB67A63892 /* Pods_OpenFallsApp_WatchKit_Extension.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +234,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B25778025C0A1A1001FEED6 /* Build configuration list for PBXNativeTarget "OpenFallsApp" */;
 			buildPhases = (
+				65076687BFAA382C57937F2C /* [CP] Check Pods Manifest.lock */,
 				3B25773E25C0A1A0001FEED6 /* Sources */,
 				3B25773F25C0A1A0001FEED6 /* Frameworks */,
 				3B25774025C0A1A0001FEED6 /* Resources */,
@@ -209,8 +254,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B25777C25C0A1A1001FEED6 /* Build configuration list for PBXNativeTarget "OpenFallsApp WatchKit App" */;
 			buildPhases = (
+				52D244096AA9275D49BC10E0 /* [CP] Check Pods Manifest.lock */,
 				3B25775425C0A1A0001FEED6 /* Resources */,
 				3B25777B25C0A1A1001FEED6 /* Embed App Extensions */,
+				1C15CD56B6997367ECFF59AC /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +273,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B25777825C0A1A1001FEED6 /* Build configuration list for PBXNativeTarget "OpenFallsApp WatchKit Extension" */;
 			buildPhases = (
+				23779CD059006E7175187535 /* [CP] Check Pods Manifest.lock */,
 				3B25776125C0A1A0001FEED6 /* Sources */,
 				3B25776225C0A1A0001FEED6 /* Frameworks */,
 				3B25776325C0A1A0001FEED6 /* Resources */,
@@ -309,6 +357,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23779CD059006E7175187535 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenFallsApp WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52D244096AA9275D49BC10E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenFallsApp WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65076687BFAA382C57937F2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenFallsApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3B25773E25C0A1A0001FEED6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -324,13 +441,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B813EC025D76745006EEA8A /* DirectoryUpload.swift in Sources */,
 				3B25776F25C0A1A0001FEED6 /* NotificationController.swift in Sources */,
 				3B25779625C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift in Sources */,
 				3B25777125C0A1A0001FEED6 /* ComplicationController.swift in Sources */,
-				3B2577A025C0A433001FEED6 /* NotificationTwoInterfaceController.swift in Sources */,
 				3B25779125C0A3DF001FEED6 /* ReportFallInterfaceController.swift in Sources */,
 				3B25776D25C0A1A0001FEED6 /* ExtensionDelegate.swift in Sources */,
-				3B25779B25C0A41F001FEED6 /* NotificationOneInterfaceController.swift in Sources */,
 				3B25776B25C0A1A0001FEED6 /* InterfaceController.swift in Sources */,
 				3B25778C25C0A38B001FEED6 /* HomeInterfaceController.swift in Sources */,
 				3B25778725C0A372001FEED6 /* AdminInterfaceController.swift in Sources */,
@@ -493,10 +609,11 @@
 		};
 		3B25777925C0A1A1001FEED6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C234E8B0E1EE2D48293C2224 /* Pods-OpenFallsApp WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = MZ98WPC7GY;
 				INFOPLIST_FILE = "OpenFallsApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -510,16 +627,17 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
 		3B25777A25C0A1A1001FEED6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8C3012A8831BBD62A4E0472 /* Pods-OpenFallsApp WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = MZ98WPC7GY;
 				INFOPLIST_FILE = "OpenFallsApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -534,18 +652,19 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
 		3B25777D25C0A1A1001FEED6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1FE975B774D73B9475521D3 /* Pods-OpenFallsApp WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = MZ98WPC7GY;
 				IBSC_MODULE = OpenFallsApp_WatchKit_Extension;
 				INFOPLIST_FILE = "OpenFallsApp WatchKit App/Info.plist";
@@ -555,18 +674,19 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
 		3B25777E25C0A1A1001FEED6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 111988617136259A634EB54B /* Pods-OpenFallsApp WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = MZ98WPC7GY;
 				IBSC_MODULE = OpenFallsApp_WatchKit_Extension;
 				INFOPLIST_FILE = "OpenFallsApp WatchKit App/Info.plist";
@@ -577,20 +697,21 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
 		3B25778125C0A1A1001FEED6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0791E0D6933B95077A655DD7 /* Pods-OpenFallsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = MZ98WPC7GY;
 				INFOPLIST_FILE = OpenFallsApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -605,14 +726,15 @@
 		};
 		3B25778225C0A1A1001FEED6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD1EF651EDF2D2C0452FD827 /* Pods-OpenFallsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = MZ98WPC7GY;
 				INFOPLIST_FILE = OpenFallsApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

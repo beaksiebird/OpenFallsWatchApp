@@ -9,7 +9,7 @@
         <!--launchScreen-->
         <scene sceneID="Wyw-aF-eeI">
             <objects>
-                <controller identifier="launchScreen" spacing="10" id="Imf-vr-arD" customClass="InterfaceController" customModule="OpenFalls_WatchKit_App" customModuleProvider="target">
+                <controller identifier="launchScreen" spacing="10" id="Imf-vr-arD" customClass="InterfaceController" customModule="OpenFallsApp_WatchKit_App" customModuleProvider="target">
                     <items>
                         <label alignment="center" verticalAlignment="center" text="OpenFalls" textAlignment="center" baselineAdjustment="alignCenters" id="NXg-lN-BjP">
                             <color key="textColor" red="0.093689919580000003" green="0.19724447110000001" blue="0.64122208999999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -55,7 +55,7 @@
         <!--homeScreen-->
         <scene sceneID="chH-s8-mfA">
             <objects>
-                <controller identifier="homeScreen" id="tTK-2J-5yB" customClass="HomeInterfaceController" customModule="OpenFalls_WatchKit_App" customModuleProvider="target">
+                <controller identifier="homeScreen" id="tTK-2J-5yB" customClass="HomeInterfaceController" customModule="OpenFallsApp_WatchKit_App" customModuleProvider="target">
                     <items>
                         <group width="1" alignment="center" spacing="0.0" id="DSU-0b-nMD">
                             <items>
@@ -174,6 +174,11 @@
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="callForHelpLabel" destination="QV2-7o-gI1" id="JkA-Ii-o3T"/>
+                        <outlet property="callHelpButton" destination="bLS-eg-BAv" id="nOf-NE-a29"/>
+                        <outlet property="fallButtonOutlet" destination="CSC-qk-C8S" id="vdb-8p-cuC"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="492" y="748"/>
@@ -209,80 +214,16 @@
             </objects>
             <point key="canvasLocation" x="220" y="748"/>
         </scene>
-        <!--notificationScreenOne-->
-        <scene sceneID="sID-7r-nj3">
-            <objects>
-                <controller identifier="notificationScreenOne" id="HzQ-tx-Pl1" customClass="NotificationOneInterfaceController" customModule="OpenFallsApp_WatchKit_App" customModuleProvider="target">
-                    <items>
-                        <imageView width="84" height="84" alignment="center" image="PersonFallIcon" contentMode="scaleAspectFit" id="VdR-43-fwR"/>
-                        <label width="136" alignment="center" text="Did you fall today?" textAlignment="center" numberOfLines="0" id="ksF-So-IL1">
-                            <color key="textColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </label>
-                        <group width="1" alignment="center" verticalAlignment="bottom" id="DX1-xi-8nb">
-                            <items>
-                                <button width="64" height="56" alignment="center" verticalAlignment="center" title="YES" id="Eop-fa-fsv">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="backgroundColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <connections>
-                                        <action selector="yesButton" destination="HzQ-tx-Pl1" id="Zk3-O9-vRs"/>
-                                    </connections>
-                                </button>
-                                <button width="64" height="56" alignment="center" verticalAlignment="center" title="NO" id="lDx-gA-GKX">
-                                    <connections>
-                                        <action selector="noButton" destination="HzQ-tx-Pl1" id="db9-oP-bUe"/>
-                                    </connections>
-                                </button>
-                            </items>
-                        </group>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="995" y="725"/>
-        </scene>
-        <!--notificationScreenTwo-->
-        <scene sceneID="vcD-H8-MDF">
-            <objects>
-                <controller identifier="notificationScreenTwo" id="eOJ-uR-BwT" customClass="NotificationTwoInterfaceController" customModule="OpenFallsApp_WatchKit_App" customModuleProvider="target">
-                    <items>
-                        <imageView width="84" height="84" alignment="center" image="PersonFallIcon" id="h5J-qV-J9G"/>
-                        <group width="1" alignment="center" verticalAlignment="bottom" id="CqI-dZ-Dwj">
-                            <items>
-                                <picker width="64" height="56" alignment="center" verticalAlignment="center" focusStyle="sequence" id="e1a-dq-Ni5">
-                                    <connections>
-                                        <action selector="pickerDidChange:" destination="eOJ-uR-BwT" id="A6k-NO-s5A"/>
-                                    </connections>
-                                </picker>
-                                <button alignment="center" verticalAlignment="center" id="rdO-Ie-95g">
-                                    <group key="contentGroup" width="64" height="55" alignment="left" backgroundImage="UploadIcon" contentMode="center" id="W4f-oR-uFk">
-                                        <color key="backgroundColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </group>
-                                    <connections>
-                                        <action selector="uploadFall" destination="eOJ-uR-BwT" id="GRs-vf-SyT"/>
-                                    </connections>
-                                </button>
-                            </items>
-                        </group>
-                        <label width="135" alignment="center" verticalAlignment="center" text="How many times did you fall?" textAlignment="center" numberOfLines="0" id="Xnb-AA-O3i">
-                            <color key="textColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </label>
-                    </items>
-                    <connections>
-                        <outlet property="timesFellPicker" destination="e1a-dq-Ni5" id="Hk4-mJ-dvH"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="995" y="1060"/>
-        </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="5as-xv-4HN">
             <objects>
-                <notificationController id="LwL-b5-7eZ" customClass="NotificationController" customModule="OpenFallsApp_WatchKit_App" customModuleProvider="target">
+                <notificationController id="LwL-b5-7eZ">
                     <items>
-                        <label alignment="center" verticalAlignment="center" text="Tap here to report a fall" textAlignment="center" numberOfLines="0" id="sOx-0g-77N">
+                        <label alignment="center" verticalAlignment="center" text="Did you fall today?  Press here to report your fall in the OpenFalls App!" textAlignment="center" numberOfLines="0" id="sOx-0g-77N">
                             <color key="textColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </label>
                     </items>
-                    <notificationCategory key="notificationCategory" id="wCB-gP-486">
+                    <notificationCategory key="notificationCategory" id="wCB-gP-486" customClass="FALLS_CATEGORY">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sashColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </notificationCategory>

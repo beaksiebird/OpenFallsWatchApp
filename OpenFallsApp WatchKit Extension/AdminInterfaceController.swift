@@ -12,6 +12,7 @@ import Foundation
 
 class AdminInterfaceController: WKInterfaceController {
     
+    var fileManager: FileManager?
     var studyTextValue = NSString()
     @IBOutlet weak var studyIDText: WKInterfaceTextField!
     
@@ -23,8 +24,15 @@ class AdminInterfaceController: WKInterfaceController {
     @IBAction func uploadData() {
         //Upload studyTextValue
         print("Uploading patient data")
-        print(studyTextValue)
+          print(studyTextValue)
+        let defaults = UserDefaults.standard
+        defaults.set(studyTextValue, forKey: "StudyID")
+        defaults.synchronize()
         //When upload successful, clear studyTextValue
+        
+   
+     
+      
     }
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
