@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Imf-vr-arD">
-    <device id="watch38"/>
+    <device id="watch42"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17500"/>
@@ -217,23 +217,76 @@
         <!--Static Notification Interface Controller-->
         <scene sceneID="5as-xv-4HN">
             <objects>
-                <notificationController id="LwL-b5-7eZ">
+                <notificationController id="LwL-b5-7eZ" customClass="NotificationController" customModule="OpenFallsApp_WatchKit_App" customModuleProvider="target">
                     <items>
                         <label alignment="center" verticalAlignment="center" text="Did you fall today?  Press here to report your fall in the OpenFalls App!" textAlignment="center" numberOfLines="0" id="sOx-0g-77N">
                             <color key="textColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </label>
                     </items>
-                    <notificationCategory key="notificationCategory" id="wCB-gP-486" customClass="FALLS_CATEGORY">
+                    <notificationCategory key="notificationCategory" identifier="FALLS_CATEGORY" id="wCB-gP-486" customClass="FALLS_CATEGORY">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sashColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </notificationCategory>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="sOx-0g-77N" id="GxJ-2S-1Bp"/>
+                        <segue destination="n7n-c9-f7d" kind="relationship" relationship="dynamicNotificationInterface" id="RaH-eh-gEr"/>
+                        <segue destination="QIF-wN-HHZ" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="26v-qJ-vrZ"/>
                     </connections>
                 </notificationController>
             </objects>
             <point key="canvasLocation" x="723" y="1039"/>
+        </scene>
+        <!--Dynamic Notification Controller-->
+        <scene sceneID="QRV-db-WiH">
+            <objects>
+                <controller id="n7n-c9-f7d" customClass="DynamicNotificationController" customModule="OpenFallsApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="nW0-Rz-Lve">
+                            <items>
+                                <imageView width="62" height="60" alignment="center" image="PersonFallIcon" id="Jga-2c-PVq"/>
+                                <label alignment="center" text="Did you fall today? Press to answer YES" textAlignment="center" numberOfLines="0" id="9rJ-KQ-dfE">
+                                    <color key="textColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1003" y="1063"/>
+        </scene>
+        <!--Dynamic Interactive Notification Controller-->
+        <scene sceneID="eIB-az-6DE">
+            <objects>
+                <controller id="QIF-wN-HHZ" customClass="DynamicInteractiveNotificationController" customModule="OpenFallsApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="cei-X6-wRN">
+                            <items>
+                                <imageView width="62" height="60" alignment="center" image="PersonFallIcon" id="NOD-9q-Zga"/>
+                                <label alignment="center" text="How many times did you fall today?" textAlignment="center" numberOfLines="0" id="yQB-F4-iTk">
+                                    <color key="textColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </label>
+                                <button width="1" alignment="left" title="1" id="cAl-63-Dcc">
+                                    <color key="backgroundColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </button>
+                                <button width="1" alignment="left" title="2" id="MR0-ZB-KH5">
+                                    <color key="backgroundColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </button>
+                                <button width="1" alignment="left" title="3" id="9VU-29-JhE">
+                                    <color key="backgroundColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </button>
+                                <button width="1" alignment="left" title="4" id="rJz-uO-hiV">
+                                    <color key="backgroundColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </button>
+                                <button width="1" alignment="left" title="5+" id="aCz-hL-EnC">
+                                    <color key="backgroundColor" red="0.60376442850000001" green="0.33504049590000001" blue="0.36905486980000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1004" y="667"/>
         </scene>
     </scenes>
     <resources>

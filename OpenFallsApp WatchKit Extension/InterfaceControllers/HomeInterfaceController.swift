@@ -14,7 +14,7 @@ import CoreLocation
 //-> Meds yes/no, Meds Date
 //-> Study ID pulled from Admin user defaults
 
-class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate {
+class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,URLSessionTaskDelegate, URLSessionDataDelegate, URLSessionDelegate {
     
     var manager: CLLocationManager!
     var didFall = false
@@ -67,7 +67,7 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        
+        uploadPatientData()
         
         Logger.log("Study ID, Initial Date/Time, Event Type, Event Location, Event Date/Time,  Associated Files")
         
@@ -82,5 +82,39 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate 
     
 
 
+    func uploadPatientData()  {
+        
+        let date = Date()
+        let df = DateFormatter()
+        df.dateFormat = "EEE', 'dd' 'MMM' 'yyy' 'HH:mm:ss' 'Z"
+        //"yyyy-MM-dd HH:mm:ss"
+        let dateForUploadFunc = df.string(from: date)
+        print(dateForUploadFunc)
+
+            let fileName = "doesthiswork2.txt"
+            let bucket = "beakbeak1701"
+            let string = "https://"+bucket+".s3.amazonaws.com/incoming/" + fileName
+            let url = NSURL(string: string)
+            let request = NSMutableURLRequest(url: url! as URL)
+
+
+            request.httpMethod = "PUT"
+            request.addValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
+            request.addValue("*/*", forHTTPHeaderField: "Accept")
+            request.addValue(dateForUploadFunc, forHTTPHeaderField: "Date")
+
+            let session = URLSession.shared
+
+            let mData = session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
+                if let res = response as? HTTPURLResponse {
+                    print("res: \(String(describing: res))")
+                    print("Response: \(String(describing: response))")
+                }else{
+                    print("Error: \(String(describing: error))")
+                }
+            }
+            mData.resume()
+        
+       }
 }
 

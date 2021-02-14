@@ -28,6 +28,8 @@
 		3B25779125C0A3DF001FEED6 /* ReportFallInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25779025C0A3DF001FEED6 /* ReportFallInterfaceController.swift */; };
 		3B25779625C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25779525C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift */; };
 		3B813EC025D76745006EEA8A /* DirectoryUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B813EBF25D76745006EEA8A /* DirectoryUpload.swift */; };
+		3B88D0E925D972A500CDAE16 /* DynamicNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B88D0E825D972A500CDAE16 /* DynamicNotificationController.swift */; };
+		3B88D0EE25D972E900CDAE16 /* DynamicInteractiveNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B88D0ED25D972E900CDAE16 /* DynamicInteractiveNotificationController.swift */; };
 		6D36B4C59176ADCDF4CC9C45 /* Pods_OpenFallsApp_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB97CC46A620FCB67A63892 /* Pods_OpenFallsApp_WatchKit_Extension.framework */; };
 		95D9CF0CED80D6607BDA37AB /* Pods_OpenFallsApp_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97177290D674C29908A898F2 /* Pods_OpenFallsApp_WatchKit_App.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +104,9 @@
 		3B25779025C0A3DF001FEED6 /* ReportFallInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFallInterfaceController.swift; sourceTree = "<group>"; };
 		3B25779525C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMedicineInterfaceController.swift; sourceTree = "<group>"; };
 		3B813EBF25D76745006EEA8A /* DirectoryUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryUpload.swift; sourceTree = "<group>"; };
+		3B88D0E825D972A500CDAE16 /* DynamicNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicNotificationController.swift; sourceTree = "<group>"; };
+		3B88D0ED25D972E900CDAE16 /* DynamicInteractiveNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicInteractiveNotificationController.swift; sourceTree = "<group>"; };
+		3B88D0FA25D99E5C00CDAE16 /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/CryptoKit.framework; sourceTree = DEVELOPER_DIR; };
 		3EB97CC46A620FCB67A63892 /* Pods_OpenFallsApp_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenFallsApp_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADE10D46E490E273931E447 /* Pods_OpenFallsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenFallsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97177290D674C29908A898F2 /* Pods_OpenFallsApp_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenFallsApp_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,20 +193,46 @@
 		3B25776925C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3B88D0E425D970BA00CDAE16 /* Uploads */,
+				3B88D0E325D970AD00CDAE16 /* InterfaceControllers */,
+				3B88D0E225D9709000CDAE16 /* Notifications */,
+				3B25777425C0A1A1001FEED6 /* Info.plist */,
+				3B25777225C0A1A1001FEED6 /* Assets.xcassets */,
+			);
+			path = "OpenFallsApp WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		3B88D0E225D9709000CDAE16 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				3B25777525C0A1A1001FEED6 /* PushNotificationPayload.apns */,
+				3B25777025C0A1A0001FEED6 /* ComplicationController.swift */,
+				3B25776E25C0A1A0001FEED6 /* NotificationController.swift */,
+				3B88D0E825D972A500CDAE16 /* DynamicNotificationController.swift */,
+				3B88D0ED25D972E900CDAE16 /* DynamicInteractiveNotificationController.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		3B88D0E325D970AD00CDAE16 /* InterfaceControllers */ = {
+			isa = PBXGroup;
+			children = (
 				3B25776C25C0A1A0001FEED6 /* ExtensionDelegate.swift */,
 				3B25776A25C0A1A0001FEED6 /* InterfaceController.swift */,
 				3B25778625C0A372001FEED6 /* AdminInterfaceController.swift */,
 				3B25778B25C0A38B001FEED6 /* HomeInterfaceController.swift */,
-				3B25779025C0A3DF001FEED6 /* ReportFallInterfaceController.swift */,
 				3B25779525C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift */,
-				3B25776E25C0A1A0001FEED6 /* NotificationController.swift */,
-				3B25777425C0A1A1001FEED6 /* Info.plist */,
-				3B25777525C0A1A1001FEED6 /* PushNotificationPayload.apns */,
-				3B25777025C0A1A0001FEED6 /* ComplicationController.swift */,
-				3B25777225C0A1A1001FEED6 /* Assets.xcassets */,
+				3B25779025C0A3DF001FEED6 /* ReportFallInterfaceController.swift */,
+			);
+			path = InterfaceControllers;
+			sourceTree = "<group>";
+		};
+		3B88D0E425D970BA00CDAE16 /* Uploads */ = {
+			isa = PBXGroup;
+			children = (
 				3B813EBF25D76745006EEA8A /* DirectoryUpload.swift */,
 			);
-			path = "OpenFallsApp WatchKit Extension";
+			path = Uploads;
 			sourceTree = "<group>";
 		};
 		40767D8B1CEE3256E3224DE2 /* Pods */ = {
@@ -220,6 +251,7 @@
 		D43C4913F8C3875CAD6F54E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B88D0FA25D99E5C00CDAE16 /* CryptoKit.framework */,
 				7ADE10D46E490E273931E447 /* Pods_OpenFallsApp.framework */,
 				97177290D674C29908A898F2 /* Pods_OpenFallsApp_WatchKit_App.framework */,
 				3EB97CC46A620FCB67A63892 /* Pods_OpenFallsApp_WatchKit_Extension.framework */,
@@ -443,9 +475,11 @@
 			files = (
 				3B813EC025D76745006EEA8A /* DirectoryUpload.swift in Sources */,
 				3B25776F25C0A1A0001FEED6 /* NotificationController.swift in Sources */,
+				3B88D0E925D972A500CDAE16 /* DynamicNotificationController.swift in Sources */,
 				3B25779625C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift in Sources */,
 				3B25777125C0A1A0001FEED6 /* ComplicationController.swift in Sources */,
 				3B25779125C0A3DF001FEED6 /* ReportFallInterfaceController.swift in Sources */,
+				3B88D0EE25D972E900CDAE16 /* DynamicInteractiveNotificationController.swift in Sources */,
 				3B25776D25C0A1A0001FEED6 /* ExtensionDelegate.swift in Sources */,
 				3B25776B25C0A1A0001FEED6 /* InterfaceController.swift in Sources */,
 				3B25778C25C0A38B001FEED6 /* HomeInterfaceController.swift in Sources */,
