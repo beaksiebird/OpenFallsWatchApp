@@ -10,26 +10,24 @@ import WatchKit
 import Foundation
 import CoreLocation
 
-//Data Points -> Fall yes/no, Fall Date
-//-> Meds yes/no, Meds Date
-//-> Study ID pulled from Admin user defaults
 
 class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,URLSessionTaskDelegate, URLSessionDataDelegate, URLSessionDelegate {
     
     var manager: CLLocationManager!
-    var didFall = false
-    var didMeds = false
+    var fallButtonPressedEvent = false
+    var medsButtonPressedEvent = false
 
   
     @IBAction func fallButton() {
-        didFall = true
+        fallButtonPressedEvent = true
         let date = Date()
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let dateStringFall = df.string(from: date)
         print(dateStringFall)
-        //Fall date/time
-        //Fall location
+        //Fall date/time to device
+        //Fall location to device
+        //DidFall = True to device
         
         let controllers = "reportFallScreen"
         presentController(withName: controllers, context: nil)
@@ -37,16 +35,15 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,
     
     }
     @IBAction func medicineButton() {
-        didMeds = true
+        medsButtonPressedEvent = true
         let date = Date()
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        print("birds")
         let dateStringMeds = df.string(from: date)
         print(dateStringMeds)
-        //Meds Date/Time
-        //Meds Location
-        print("ths works")
+        //Meds Date/Time to device
+        //Meds Location to device
+        //DidMeds = True to device
         Logger.log(dateStringMeds)
         
         let controllers = "reportMedicineScreen"
@@ -64,24 +61,12 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,
         
     }
     
-    func pullStudyID() {
-        //Stored StudyID
-        if let savedID = UserDefaults.standard.object(forKey: "StudyID") {
-            let storedStudyID = savedID
-            print(storedStudyID)
-        }
-    }
-
+   
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-      
-
-        
+    
     }
     
-   
-
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()

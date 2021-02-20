@@ -7,30 +7,98 @@
 import WatchKit
 import Foundation
 import CoreLocation
+import AVFoundation
 
-//Data points -> Meds Recording, Meds Location
 
-class ReportMedicineInterfaceController: WKInterfaceController, CLLocationManagerDelegate {
+class ReportMedicineInterfaceController: WKInterfaceController, CLLocationManagerDelegate, AVAudioRecorderDelegate {
     
     let manager = CLLocationManager()
     var isRequestingLocation = false
     var userLocation: CLLocation?
+    var recordingSession: AVAudioSession!
+    var fallRecorder: AVAudioRecorder!
+    var audioURL = getRecordingURL()
+    var recordMedsEvent = false
+  
  
-    
     @IBAction func recordMeds() {
-       
+       recordMedsEvent = true 
+        //Save to device 
         print("Recording Meds")
+        requestLocation()
+        print("Recording Fall")
+        //Request permission for microphone use
+              recordingSession = AVAudioSession.sharedInstance()
+      
+        do {
+            try recordingSession.setCategory(.record, mode: .default)
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission() { [unowned self] allowed in
+                DispatchQueue.main.async {
+                    if allowed {
+                        if fallRecorder == nil {
+                            self.startRecording()
+                        } else {
+                            self.fallRecorder.stop()
+                            fallRecorder = nil
+                            
+                            uploadPatientFile.uploadPatientData(fileName: audioURL)
+             
+                        }
+                        
+                    } else {
+                        print("Permission not granted")
+                    }
+                }
+            }
+        } catch {
+            print("Recording functionality not working")
+        }
+
     }
+    
+    func startRecording() {
+            //Actual recording
+            let fallAudioURL = audioURL
+            print("Here is fall recording URL")
+            print(fallAudioURL.absoluteString)
+            let settings = [
+                  AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                  AVSampleRateKey: 12000,
+                  AVNumberOfChannelsKey: 1,
+                  AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+              ]
+    
+            do {
+                   fallRecorder = try AVAudioRecorder(url: audioURL, settings: settings)
+                   fallRecorder.delegate = self
+                   fallRecorder.record()
+               } catch {
+                fallRecorder.stop()
+                fallRecorder = nil
+               }
+        }
+    
+   
+
+    class func getDocumentsDirectory() -> URL {
+         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+         let documentsDirectory = paths[0]
+         return documentsDirectory
+     }
+
+     class func getRecordingURL() -> URL {
+         return getDocumentsDirectory().appendingPathComponent("bird.m4a")
+     }
+    
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         manager.delegate = self
-        requestLocation()
         
     }
     
   
-
     override func willActivate() {
         super.willActivate()
     }
@@ -74,6 +142,7 @@ class ReportMedicineInterfaceController: WKInterfaceController, CLLocationManage
              print("Lat =  \(lastLocationCoordinate.latitude)")
 
              print("Long = \(lastLocationCoordinate.longitude)")
+            //Save location to device
 
              self.isRequestingLocation = false
 
@@ -87,43 +156,4 @@ class ReportMedicineInterfaceController: WKInterfaceController, CLLocationManage
         
     }
     
-        private func documentDirectory() -> String {
-            let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory,
-                                                                        .userDomainMask,
-                                                                        true)
-            return documentDirectory[0]
-        }
-    
-        private func append(toPath path: String,
-                            withPathComponent pathComponent: String) -> String? {
-            if var pathURL = URL(string: path) {
-                pathURL.appendPathComponent(pathComponent)
-    
-                return pathURL.absoluteString
-            }
-    
-            return nil
-        }
-    
-        private func save(text: String,
-                          toDirectory directory: String,
-                          withFileName fileName: String) {
-            guard let filePath = self.append(toPath: directory,
-                                             withPathComponent: fileName) else {
-                return
-            }
-    
-            do {
-                try text.write(toFile: filePath,
-                               atomically: true,
-                               encoding: .utf8)
-                print(filePath)
-            } catch {
-                print("Error", error)
-                return
-            }
-    
-            print("Save successful")
-        }
-   
 }

@@ -6,7 +6,11 @@
 //
 
 import Foundation
-
+//Always in file -> Study ID, Initial time/date
+//Types of events
+//Fall Button Pressed Event, Meds Button Pressed Event, FallRecordEvent, MedsRecordEvent, CallForHelp
+//Time, Time, Time/Location, Time/Location, Time
+//Associated files are Fall Recording and Meds Recording m4a files
 
 struct uploadPatientFile {
     
@@ -15,7 +19,6 @@ struct uploadPatientFile {
         let date = Date()
         let df = DateFormatter()
         df.dateFormat = "EEE', 'dd' 'MMM' 'yyy' 'HH:mm:ss' 'Z"
-        //"yyyy-MM-dd HH:mm:ss"
         let dateForUploadFunc = df.string(from: date)
         print(dateForUploadFunc)
 
@@ -44,15 +47,7 @@ struct uploadPatientFile {
                 print("Error: \(String(describing: error))")
             }
         }
-//
-//            let mData = session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
-//                if let res = response as? HTTPURLResponse {
-//                    print("res: \(String(describing: res))")
-//                    print("Response: \(String(describing: response))")
-//                } else {
-//                    print("Error: \(String(describing: error))")
-//                }
-//            }
+
             mData.resume()
         
        }

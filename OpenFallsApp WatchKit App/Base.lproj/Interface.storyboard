@@ -44,10 +44,6 @@
                             <color key="textColor" red="0.97895862140000001" green="1" blue="0.54371200509999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </label>
                     </items>
-                    <connections>
-                        <outlet property="adminButton" destination="eKm-wT-fpJ" id="p8p-Au-UFi"/>
-                        <outlet property="patientButton" destination="Fab-nt-Eqa" id="jOZ-vF-k5u"/>
-                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="348"/>

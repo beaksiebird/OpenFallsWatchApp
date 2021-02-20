@@ -10,17 +10,10 @@ import Foundation
 import UserNotifications
 import CoreLocation
 
-
-
-//Data Points -> Date/Time Launched App
-
-
 class InterfaceController: WKInterfaceController, UNUserNotificationCenterDelegate {
 
 
-    @IBOutlet weak var adminButton: WKInterfaceButton!
-    
-    @IBOutlet weak var patientButton: WKInterfaceButton!
+
     
     @IBAction func toPatientScreen() {
         let controllers = "homeScreen"
@@ -37,8 +30,7 @@ class InterfaceController: WKInterfaceController, UNUserNotificationCenterDelega
  
     override func awake(withContext context: Any?) {
         initialDate()
-    
-        uploadFilesToAWS()
+        //uploadFilesToAWS()
     }
 
     func initialDate() {
@@ -47,8 +39,7 @@ class InterfaceController: WKInterfaceController, UNUserNotificationCenterDelega
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let dateStringLaunched = df.string(from: date)
         print(dateStringLaunched)
-        
-        //Save this to documents directory
+ //Save to device
     }
     
     func uploadFilesToAWS() {
@@ -56,7 +47,15 @@ class InterfaceController: WKInterfaceController, UNUserNotificationCenterDelega
         
     }
 
-    
+    func pullStudyID() {
+        //Stored StudyID
+        if let savedID = UserDefaults.standard.object(forKey: "StudyID") {
+            let storedStudyID = savedID
+            print(storedStudyID)
+            //Save to device 
+        }
+    }
+
     override func willActivate() {
      
 
@@ -64,7 +63,7 @@ class InterfaceController: WKInterfaceController, UNUserNotificationCenterDelega
 
     
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
+       
     }
 
  

@@ -28,28 +28,22 @@ class AdminInterfaceController: WKInterfaceController {
         let defaults = UserDefaults.standard
         defaults.set(studyTextValue, forKey: "StudyID")
         defaults.synchronize()
-        //When upload successful, clear studyTextValue
         
-        let controllers = "launchScreen"
-        presentController(withName: controllers, context: nil)
-   
-     
+        self.dismiss()
       
     }
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
+      
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         studyIDText.setText("")
         super.willActivate()
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
 

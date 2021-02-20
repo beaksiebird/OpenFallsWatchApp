@@ -11,7 +11,6 @@ import AVFoundation
 import Network
 import CoreLocation
 
-//Data Points -> Fall recording, Fall location, Call help yes/no, Call help time
 
 
 class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDelegate, CLLocationManagerDelegate {
@@ -22,9 +21,10 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
     var recordingSession: AVAudioSession!
     var fallRecorder: AVAudioRecorder!
     let monitor = NWPathMonitor()
-    var calledHelp = false
-    
+    var calledHelpEvent = false
     var audioURL = getRecordingURL()
+    var recordFallEvent = false
+
     
     @IBOutlet weak var fallButtonOutlet: WKInterfaceButton!
     
@@ -84,7 +84,7 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
              print("Lat =  \(lastLocationCoordinate.latitude)")
 
              print("Long = \(lastLocationCoordinate.longitude)")
-
+//Save location to device
              self.isRequestingLocation = false
 
          }
@@ -99,12 +99,11 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
     
 
     @IBAction func recordFall() {
-        
-        //Request permission for microphone use
+        recordFallEvent = true 
+        //Save to device
         requestLocation()
         print("Recording Fall")
         //Request permission for microphone use
-              print("Recording Fall")
               recordingSession = AVAudioSession.sharedInstance()
       
         do {
@@ -113,8 +112,6 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
             recordingSession.requestRecordPermission() { [unowned self] allowed in
                 DispatchQueue.main.async {
                     if allowed {
-                        print("Permission granted.")
-                    
                         if fallRecorder == nil {
                             self.startRecording()
                         } else {
@@ -174,7 +171,8 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
     
   
     @IBAction func callHelp() {
-        calledHelp = true
+        calledHelpEvent = true
+        //Save calledHelp to device
         let date = Date()
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -203,48 +201,8 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
         
-        fallRecorder = nil
+        
     }
     
-    
-        private func documentDirectory() -> String {
-            let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory,
-                                                                        .userDomainMask,
-                                                                        true)
-            return documentDirectory[0]
-        }
-    
-        private func append(toPath path: String,
-                            withPathComponent pathComponent: String) -> String? {
-            if var pathURL = URL(string: path) {
-                pathURL.appendPathComponent(pathComponent)
-    
-                return pathURL.absoluteString
-            }
-    
-            return nil
-        }
-    
-        private func save(text: String,
-                          toDirectory directory: String,
-                          withFileName fileName: String) {
-            guard let filePath = self.append(toPath: directory,
-                                             withPathComponent: fileName) else {
-                return
-            }
-    
-            do {
-                try text.write(toFile: filePath,
-                               atomically: true,
-                               encoding: .utf8)
-                print(filePath)
-            } catch {
-                print("Error", error)
-                return
-            }
-    
-            print("Save successful")
-        }
-  
-
+   
 }
