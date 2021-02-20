@@ -24,6 +24,8 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
     let monitor = NWPathMonitor()
     var calledHelp = false
     
+    var audioURL = getRecordingURL()
+    
     @IBOutlet weak var fallButtonOutlet: WKInterfaceButton!
     
     override func awake(withContext context: Any?) {
@@ -118,6 +120,9 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
                         } else {
                             self.fallRecorder.stop()
                             fallRecorder = nil
+                            
+                            uploadPatientFile.uploadPatientData(fileName: audioURL)
+             
                         }
                         
                     } else {
@@ -135,9 +140,9 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
     
     func startRecording() {
             //Actual recording
-            let audioURL = ReportFallInterfaceController.getRecordingURL()
+            let fallAudioURL = audioURL
             print("Here is fall recording URL")
-            print(audioURL.absoluteString)
+            print(fallAudioURL.absoluteString)
             let settings = [
                   AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
                   AVSampleRateKey: 12000,
@@ -197,7 +202,7 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
-        fallRecorder.stop()
+        
         fallRecorder = nil
     }
     

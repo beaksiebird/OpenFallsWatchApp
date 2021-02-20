@@ -23,7 +23,7 @@
                                 <color key="backgroundColor" red="0.65120141789999997" green="0.33811684390000002" blue="0.37931861579999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </group>
                             <connections>
-                                <segue destination="tTK-2J-5yB" kind="push" id="gdh-AX-rly"/>
+                                <action selector="toPatientScreen" destination="Imf-vr-arD" id="Mi6-AO-8Xf"/>
                             </connections>
                         </button>
                         <label height="20" alignment="center" verticalAlignment="center" text="Patient Access" textAlignment="center" baselineAdjustment="alignCenters" id="OXt-Zg-7B0">
@@ -37,7 +37,7 @@
                                 <color key="backgroundColor" red="0.97895862140000001" green="1" blue="0.54371200509999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </group>
                             <connections>
-                                <segue destination="0Y9-aW-zpA" kind="push" id="nB7-XI-qv0"/>
+                                <action selector="toAdminScreen" destination="Imf-vr-arD" id="EFv-hI-OJ2"/>
                             </connections>
                         </button>
                         <label alignment="center" verticalAlignment="center" text="Admin Access" textAlignment="center" baselineAdjustment="alignCenters" id="COf-68-au0">
@@ -76,7 +76,6 @@
                                     </group>
                                     <connections>
                                         <action selector="fallButton" destination="tTK-2J-5yB" id="tkF-9g-8gB"/>
-                                        <segue destination="o54-JB-7K0" kind="push" id="t8J-1U-MLB"/>
                                     </connections>
                                 </button>
                                 <button alignment="center" verticalAlignment="center" id="iXZ-jZ-zhI">
@@ -84,8 +83,7 @@
                                         <color key="backgroundColor" red="0.2216476218" green="0.43813131309999997" blue="0.17251136989999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </group>
                                     <connections>
-                                        <action selector="medicineButton" destination="tTK-2J-5yB" id="4Hr-Cd-ZxL"/>
-                                        <segue destination="mfx-wi-bN0" kind="push" id="o1U-uo-mHr"/>
+                                        <action selector="medicineButton" destination="tTK-2J-5yB" id="mRZ-Eq-IoX"/>
                                     </connections>
                                 </button>
                             </items>
@@ -106,7 +104,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="492" y="348"/>
+            <point key="canvasLocation" x="454" y="490"/>
         </scene>
         <!--reportMedicineScreen-->
         <scene sceneID="Z5C-dq-Bag">
@@ -135,7 +133,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="763" y="348"/>
+            <point key="canvasLocation" x="696" y="347"/>
         </scene>
         <!--reportFallScreen-->
         <scene sceneID="Xgw-MK-Ape">
@@ -181,7 +179,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="492" y="748"/>
+            <point key="canvasLocation" x="696" y="637"/>
         </scene>
         <!--adminScreen-->
         <scene sceneID="anL-3v-sNI">
@@ -212,7 +210,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="748"/>
+            <point key="canvasLocation" x="220" y="627"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="5as-xv-4HN">

@@ -30,6 +30,8 @@ class AdminInterfaceController: WKInterfaceController {
         defaults.synchronize()
         //When upload successful, clear studyTextValue
         
+        let controllers = "launchScreen"
+        presentController(withName: controllers, context: nil)
    
      
       

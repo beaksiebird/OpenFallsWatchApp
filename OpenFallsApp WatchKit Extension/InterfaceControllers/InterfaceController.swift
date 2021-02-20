@@ -22,9 +22,17 @@ class InterfaceController: WKInterfaceController, UNUserNotificationCenterDelega
     
     @IBOutlet weak var patientButton: WKInterfaceButton!
     
-
+    @IBAction func toPatientScreen() {
+        let controllers = "homeScreen"
+        presentController(withName: controllers, context: nil)
+    }
+    
  
-        
+    @IBAction func toAdminScreen() {
+        let controllers = "adminScreen"
+        presentController(withName: controllers, context: nil)
+    }
+    
 
  
     override func awake(withContext context: Any?) {

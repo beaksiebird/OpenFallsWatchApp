@@ -19,6 +19,7 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,
     var manager: CLLocationManager!
     var didFall = false
     var didMeds = false
+
   
     @IBAction func fallButton() {
         didFall = true
@@ -29,10 +30,10 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,
         print(dateStringFall)
         //Fall date/time
         //Fall location
-   
-        Logger.log(dateStringFall)
         
-
+        let controllers = "reportFallScreen"
+        presentController(withName: controllers, context: nil)
+        
     
     }
     @IBAction func medicineButton() {
@@ -40,11 +41,18 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,
         let date = Date()
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        print("birds")
         let dateStringMeds = df.string(from: date)
         print(dateStringMeds)
         //Meds Date/Time
         //Meds Location
+        print("ths works")
         Logger.log(dateStringMeds)
+        
+        let controllers = "reportMedicineScreen"
+        presentController(withName: controllers, context: nil)
+
+ 
     }
     
     @IBOutlet weak var hoursSinceMeds: WKInterfaceLabel!
@@ -67,9 +75,8 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        uploadPatientData()
-        
-        Logger.log("Study ID, Initial Date/Time, Event Type, Event Location, Event Date/Time,  Associated Files")
+      
+
         
     }
     
@@ -78,43 +85,10 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    
     }
     
 
 
-    func uploadPatientData()  {
-        
-        let date = Date()
-        let df = DateFormatter()
-        df.dateFormat = "EEE', 'dd' 'MMM' 'yyy' 'HH:mm:ss' 'Z"
-        //"yyyy-MM-dd HH:mm:ss"
-        let dateForUploadFunc = df.string(from: date)
-        print(dateForUploadFunc)
-
-            let fileName = "doesthiswork2.txt"
-            let bucket = "beakbeak1701"
-            let string = "https://"+bucket+".s3.amazonaws.com/incoming/" + fileName
-            let url = NSURL(string: string)
-            let request = NSMutableURLRequest(url: url! as URL)
-
-
-            request.httpMethod = "PUT"
-            request.addValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
-            request.addValue("*/*", forHTTPHeaderField: "Accept")
-            request.addValue(dateForUploadFunc, forHTTPHeaderField: "Date")
-
-            let session = URLSession.shared
-
-            let mData = session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
-                if let res = response as? HTTPURLResponse {
-                    print("res: \(String(describing: res))")
-                    print("Response: \(String(describing: response))")
-                }else{
-                    print("Error: \(String(describing: error))")
-                }
-            }
-            mData.resume()
-        
-       }
 }
 
