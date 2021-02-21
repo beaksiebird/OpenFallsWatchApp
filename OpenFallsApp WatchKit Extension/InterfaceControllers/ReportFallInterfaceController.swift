@@ -87,7 +87,7 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
              print("Long = \(lastLocationCoordinate.longitude)")
             
             let lat = lastLocationCoordinate.latitude
-            let long = lastLocationCoordinate.latitude
+            let long = lastLocationCoordinate.longitude
             
             self.locationString = "\(lat) \(long)"
             

@@ -21,7 +21,8 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
     var locationString = String()
  
     @IBAction func recordMeds() {
-    
+    print("location check")
+        print(locationString)
         Event.create(eventType: Event.recordedMeds, associatedFile: "Insert File Here", location: locationString)
     
 
@@ -140,9 +141,12 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
              print("Long = \(lastLocationCoordinate.longitude)")
             
             let lat = lastLocationCoordinate.latitude
-            let long = lastLocationCoordinate.latitude
+            let long = lastLocationCoordinate.longitude
             
             self.locationString = "\(lat) \(long)"
+            print("locatin check one")
+            print(lat)
+            print(long)
             
             self.isRequestingLocation = false
 

@@ -13,6 +13,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
   
     
     func applicationDidFinishLaunching() {
+        Event.create(eventType: Event.appStart, associatedFile: "", location: "")
         
     }
     

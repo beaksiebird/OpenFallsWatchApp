@@ -35,7 +35,7 @@ class InterfaceController: WKInterfaceController, UNUserNotificationCenterDelega
 
 
     override func willActivate() {
-        Event.create(eventType: Event.appStart, associatedFile: "", location: "")
+       
 
     }
 

@@ -59,7 +59,7 @@ class Event {
     static var callHelp = "Called For Help"
 
     static func create(eventType: String, associatedFile: String, location: String) {
-        var location = String()
+    
         
         let date = Date()
         let df = DateFormatter()
@@ -74,13 +74,7 @@ class Event {
                 storedStudyID = "None Entered"
             }
             
-            if eventType == recordedFall || eventType == recordedMeds {
-                //get location
-          
-            } else {
-                location = ""
-            }
-            
+         
             let writtenData = "\(storedStudyID),\(eventType),\(location),\(eventDate),\(associatedFile)\n"
             Logger.log(writtenData)
         }
