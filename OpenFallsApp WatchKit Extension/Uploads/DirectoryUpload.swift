@@ -9,32 +9,23 @@ import Foundation
 
 
 struct uploadPatientFile {
-    
+
     static func uploadPatientData(fileName: URL)  {
-        
         let date = Date()
         let df = DateFormatter()
         df.dateFormat = "EEE', 'dd' 'MMM' 'yyy' 'HH:mm:ss' 'Z"
         let dateForUploadFunc = df.string(from: date)
         print(dateForUploadFunc)
-      
         let bucket = "beakbeak1701"
-        let string = "https://"+bucket+".s3.amazonaws.com/incoming/" + fileName.lastPathComponent
-        
-        print("HERE IS URL IN UPLOADPATIENTDATA")
-        print(string)
-            let url = NSURL(string: string)
-            let request = NSMutableURLRequest(url: url! as URL)
-
+       let myurl = "https://"+bucket+".s3.amazonaws.com/incoming/" + fileName.lastPathComponent
+     
+        let configuration = URLSessionConfiguration.default
+        let request = NSMutableURLRequest(url: NSURL(string: myurl)! as URL)
             request.httpMethod = "PUT"
-            request.addValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
-            request.addValue("*/*", forHTTPHeaderField: "Accept")
-            request.addValue(dateForUploadFunc, forHTTPHeaderField: "Date")
-
-            let session = URLSession.shared
-    
-        let mData = session.uploadTask(with: request as URLRequest, fromFile: url! as URL) { (data, response, error) in
-            
+        request.setValue("bird.txt", forHTTPHeaderField: "filename")
+        request.addValue(dateForUploadFunc, forHTTPHeaderField: "Date")
+        let session = URLSession(configuration: configuration)
+        let mData = session.uploadTask(with: request as URLRequest, fromFile: fileName) { (data, response, error) in
             if let res = response as? HTTPURLResponse {
                 print("res: \(String(describing: res))")
                 print("Response: \(String(describing: response))")
@@ -42,9 +33,7 @@ struct uploadPatientFile {
                 print("Error: \(String(describing: error))")
             }
         }
-
-            mData.resume()
-        
+        mData.resume()
        }
 }
 class Event {

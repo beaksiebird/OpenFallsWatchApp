@@ -12,9 +12,6 @@ import CoreLocation
 
 class InterfaceController: WKInterfaceController, UNUserNotificationCenterDelegate {
 
-
-
-    
     @IBAction func toPatientScreen() {
         let controllers = "homeScreen"
         presentController(withName: controllers, context: nil)
@@ -35,7 +32,8 @@ class InterfaceController: WKInterfaceController, UNUserNotificationCenterDelega
 
 
     override func willActivate() {
-       
+       //Upload to AWS
+        
 
     }
 

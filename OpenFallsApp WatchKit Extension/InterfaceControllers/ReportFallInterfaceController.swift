@@ -122,7 +122,7 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
                             fallRecorder = nil
                             Event.create(eventType: Event.recordedFall, associatedFile: "INSERT FILE HERE", location: locationString)
                             //Upload recording to AWS
-                          // uploadPatientFile.uploadPatientData(fileName: audioURL)
+                          uploadPatientFile.uploadPatientData(fileName: audioURL)
                            
                            
                         }

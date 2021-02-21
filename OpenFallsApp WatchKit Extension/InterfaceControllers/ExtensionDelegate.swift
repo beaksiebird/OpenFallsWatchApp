@@ -9,7 +9,8 @@ import WatchKit
 
 
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate {
+
+class ExtensionDelegate: NSObject, WKExtensionDelegate, CLLocationManagerDelegate  {
   
     
     func applicationDidFinishLaunching() {
