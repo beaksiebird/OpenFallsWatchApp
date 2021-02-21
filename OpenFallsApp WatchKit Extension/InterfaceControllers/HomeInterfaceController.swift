@@ -18,14 +18,14 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,
 
   
     @IBAction func fallButton() {
-        Event.create(eventType: Event.didFall, associatedFile: "", location: "")
+        Event.create(eventType: Event.didFall, associatedFile: "N/A", location: "N/A")
         let controllers = "reportFallScreen"
         presentController(withName: controllers, context: nil)
         
     
     }
     @IBAction func medicineButton() {
-        Event.create(eventType: Event.didMeds, associatedFile: "", location: "")
+        Event.create(eventType: Event.didMeds, associatedFile: "N/A", location: "N/A")
         let controllers = "reportMedicineScreen"
         presentController(withName: controllers, context: nil)
 

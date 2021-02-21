@@ -21,11 +21,8 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
     var locationString = String()
  
     @IBAction func recordMeds() {
-    print("location check")
         print(locationString)
-        Event.create(eventType: Event.recordedMeds, associatedFile: "Insert File Here", location: locationString)
-    
-
+      
         //Request permission for microphone use
               recordingSession = AVAudioSession.sharedInstance()
       
@@ -40,25 +37,31 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
                         } else {
                             self.fallRecorder.stop()
                             fallRecorder = nil
+                            Event.create(eventType: Event.recordedMeds, associatedFile: "ADD FILE", location: locationString)
+                            
+                            //Upload recording to AWS
+                        
                             
                         }
                         
                     } else {
                         print("Permission not granted")
+                        Event.create(eventType: Event.recordingNoPermissionMeds, associatedFile: "N/A", location: locationString)
                     }
                 }
             }
         } catch {
             print("Recording functionality not working")
+            Event.create(eventType: Event.recordingFailedMeds, associatedFile: "N/A", location: locationString)
         }
 
     }
     
     func startRecording() {
             //Actual recording
-            let fallAudioURL = audioURL
+            let medsAudioURL = audioURL
             print("Here is fall recording URL")
-            print(fallAudioURL.absoluteString)
+            print(medsAudioURL.absoluteString)
             let settings = [
                   AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
                   AVSampleRateKey: 12000,
@@ -71,8 +74,10 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
                    fallRecorder.delegate = self
                    fallRecorder.record()
                } catch {
+                Event.create(eventType: Event.recordingFailedMeds, associatedFile: "N/A", location: locationString)
                 fallRecorder.stop()
                 fallRecorder = nil
+                
                }
         }
     
@@ -85,7 +90,7 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
      }
 
      class func getRecordingURL() -> URL {
-         return getDocumentsDirectory().appendingPathComponent("bird.m4a")
+         return getDocumentsDirectory().appendingPathComponent("medicinerecording.m4a")
      }
     
     
@@ -144,7 +149,6 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
             let long = lastLocationCoordinate.longitude
             
             self.locationString = "\(lat) \(long)"
-            print("locatin check one")
             print(lat)
             print(long)
             

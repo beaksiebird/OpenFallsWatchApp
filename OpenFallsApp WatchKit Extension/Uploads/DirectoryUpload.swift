@@ -32,9 +32,6 @@ struct uploadPatientFile {
             request.addValue(dateForUploadFunc, forHTTPHeaderField: "Date")
 
             let session = URLSession.shared
-      
-
-        //need upload task
     
         let mData = session.uploadTask(with: request as URLRequest, fromFile: url! as URL) { (data, response, error) in
             
@@ -57,6 +54,10 @@ class Event {
     static var didFall = "Fall Button Pressed"
     static var didMeds = "Meds Button Pressed"
     static var callHelp = "Called For Help"
+    static var recordingFailedFall = "Recording Failed"
+    static var recordingNoPermissionFall = "User did not allow recording"
+    static var recordingFailedMeds = "Recording Failed"
+    static var recordingNoPermissionMeds = "User did not allow recording"
 
     static func create(eventType: String, associatedFile: String, location: String) {
     
@@ -91,7 +92,6 @@ class Logger {
     }
 
     static func log(_ message: String) {
-        print("Fur")
         guard let logFile = logFile else {
             return
         }
@@ -107,42 +107,4 @@ class Logger {
         }
     }
 }
-
-
-//class Logger {
-//
-//    static var logFile: URL? {
-//        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
-//        let fileName = "beakbeak.csv"
-//        return documentsDirectory.appendingPathComponent(fileName)
-//    }
-//
-//    static func log(_ message: String) {
-//        print(message)
-//        guard let logFile = logFile else {
-//            return
-//        }
-//        guard let data = (message).data(using: String.Encoding.utf8) else { return }
-//        let fileExists = FileManager.default.fileExists(atPath: logFile.path)
-//
-//        if let fileHandle = try? FileHandle(forWritingTo: logFile) {
-//
-//            if !fileExists {
-//                print("File doesnt exist")
-//
-//                Logger.log("Study ID, Initial Date/Time, Event Type, Event Location, Event Date/Time,  Associated Files")
-//            } else {
-//                print("File exists")
-//                fileHandle.seekToEndOfFile()
-//            }
-//            print("Fir")
-//
-//            fileHandle.write(data)
-//            fileHandle.closeFile()
-//            print(logFile.path)
-//        } else {
-//            print("birdfur")
-//        }
-//    }
-//}
 

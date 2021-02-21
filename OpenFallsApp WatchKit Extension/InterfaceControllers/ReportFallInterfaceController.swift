@@ -105,8 +105,7 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
     
 
     @IBAction func recordFall() {
-        Event.create(eventType: Event.recordedFall, associatedFile: "INSERT FILE HERE", location: locationString)
-        print("Recording Fall")
+
         //Request permission for microphone use
               recordingSession = AVAudioSession.sharedInstance()
       
@@ -121,20 +120,22 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
                         } else {
                             self.fallRecorder.stop()
                             fallRecorder = nil
-                            
-                           uploadPatientFile.uploadPatientData(fileName: audioURL)
+                            Event.create(eventType: Event.recordedFall, associatedFile: "INSERT FILE HERE", location: locationString)
+                            //Upload recording to AWS
+                          // uploadPatientFile.uploadPatientData(fileName: audioURL)
                            
                            
-             
                         }
                         
                     } else {
                         print("Permission not granted")
+                        Event.create(eventType: Event.recordingNoPermissionFall, associatedFile: "N/A", location: locationString)
                     }
                 }
             }
         } catch {
             print("Recording functionality not working")
+            Event.create(eventType: Event.recordingFailedFall, associatedFile: "N/A", location: locationString)
         }
 
 
@@ -158,6 +159,7 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
                    fallRecorder.delegate = self
                    fallRecorder.record()
                } catch {
+                Event.create(eventType: Event.recordingFailedFall, associatedFile: "N/A", location: locationString)
                 fallRecorder.stop()
                 fallRecorder = nil
                }
@@ -172,15 +174,15 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
      }
 
      class func getRecordingURL() -> URL {
-         return getDocumentsDirectory().appendingPathComponent("bird.m4a")
+         return getDocumentsDirectory().appendingPathComponent("fallrecording.m4a")
      }
     
   
     @IBAction func callHelp() {
-        Event.create(eventType: Event.callHelp, associatedFile: "", location: "")
-    
+        Event.create(eventType: Event.callHelp, associatedFile: "N/A", location: locationString)
+
         print("Calling emergency services")
-        let phone = "4047317508"
+        let phone = ""
         if let telURL = URL(string: "tel:\(phone)") {
             let wkExt = WKExtension.shared()
             wkExt.openSystemURL(telURL)
