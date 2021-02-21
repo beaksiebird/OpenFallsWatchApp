@@ -6,11 +6,7 @@
 //
 
 import Foundation
-//Always in file -> Study ID, Initial time/date
-//Types of events
-//Fall Button Pressed Event, Meds Button Pressed Event, FallRecordEvent, MedsRecordEvent, CallForHelp
-//Time, Time, Time/Location, Time/Location, Time
-//Associated files are Fall Recording and Meds Recording m4a files
+
 
 struct uploadPatientFile {
     
@@ -21,14 +17,14 @@ struct uploadPatientFile {
         df.dateFormat = "EEE', 'dd' 'MMM' 'yyy' 'HH:mm:ss' 'Z"
         let dateForUploadFunc = df.string(from: date)
         print(dateForUploadFunc)
-
+      
         let bucket = "beakbeak1701"
         let string = "https://"+bucket+".s3.amazonaws.com/incoming/" + fileName.lastPathComponent
+        
         print("HERE IS URL IN UPLOADPATIENTDATA")
         print(string)
             let url = NSURL(string: string)
             let request = NSMutableURLRequest(url: url! as URL)
-
 
             request.httpMethod = "PUT"
             request.addValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
@@ -36,8 +32,10 @@ struct uploadPatientFile {
             request.addValue(dateForUploadFunc, forHTTPHeaderField: "Date")
 
             let session = URLSession.shared
+      
 
         //need upload task
+    
         let mData = session.uploadTask(with: request as URLRequest, fromFile: url! as URL) { (data, response, error) in
             
             if let res = response as? HTTPURLResponse {
@@ -52,13 +50,49 @@ struct uploadPatientFile {
         
        }
 }
+class Event {
+    static var recordedFall = "Recorded Fall"
+    static var recordedMeds = "Recorded Meds"
+    static var appStart = "App Launched"
+    static var didFall = "Fall Button Pressed"
+    static var didMeds = "Meds Button Pressed"
+    static var callHelp = "Called For Help"
+
+    static func create(eventType: String, associatedFile: String, location: String) {
+        var location = String()
+        
+        let date = Date()
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let eventDate = df.string(from: date)
+        
+        //Stored StudyID
+        if let savedID = UserDefaults.standard.string(forKey: "StudyID") {
+            var storedStudyID = savedID
+            print(storedStudyID)
+            if storedStudyID == "" {
+                storedStudyID = "None Entered"
+            }
+            
+            if eventType == recordedFall || eventType == recordedMeds {
+                //get location
+          
+            } else {
+                location = ""
+            }
+            
+            let writtenData = "\(storedStudyID),\(eventType),\(location),\(eventDate),\(associatedFile)\n"
+            Logger.log(writtenData)
+        }
+    }
+}
 
 class Logger {
 
     static var logFile: URL? {
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
   
-        let fileName = "Birdsarefuzzy2.csv"
+        let fileName = "databuffer.csv"
         return documentsDirectory.appendingPathComponent(fileName)
     }
 
@@ -67,19 +101,15 @@ class Logger {
         guard let logFile = logFile else {
             return
         }
-
-        guard let data = "Study ID, Initial Date/Time, Event Type, Event Location, Event Date/Time, Associated Files\n\n".data(using: String.Encoding.utf8) else { return }
-
-        if FileManager.default.fileExists(atPath: logFile.path) {
-            if let fileHandle = try? FileHandle(forWritingTo: logFile) {
+        if !FileManager.default.fileExists(atPath: logFile.path) {
+            let data = "Study ID,Event Type,Event Location,Event Date/Time,Associated Files\n".data(using: String.Encoding.utf8)
+            try? data!.write(to: logFile, options: .atomicWrite)
+        }
+        if let fileHandle = try? FileHandle(forWritingTo: logFile) {
                 print(logFile)
                 fileHandle.seekToEndOfFile()
-                fileHandle.write(data)
+                fileHandle.write(message.data(using: String.Encoding.utf8)!)
                 fileHandle.closeFile()
-            }
-        } else {
-            print(logFile)
-            try? data.write(to: logFile, options: .atomicWrite)
         }
     }
 }

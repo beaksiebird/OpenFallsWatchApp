@@ -6,27 +6,25 @@
 //
 import WatchKit
 import Foundation
-import CoreLocation
 import AVFoundation
+import CoreLocation
 
 
-class ReportMedicineInterfaceController: WKInterfaceController, CLLocationManagerDelegate, AVAudioRecorderDelegate {
+class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderDelegate, CLLocationManagerDelegate {
     
-    let manager = CLLocationManager()
-    var isRequestingLocation = false
-    var userLocation: CLLocation?
     var recordingSession: AVAudioSession!
     var fallRecorder: AVAudioRecorder!
     var audioURL = getRecordingURL()
-    var recordMedsEvent = false
-  
+    let manager = CLLocationManager()
+    var isRequestingLocation = false
+    var userLocation: CLLocation?
+    var locationString = String()
  
     @IBAction func recordMeds() {
-       recordMedsEvent = true 
-        //Save to device 
-        print("Recording Meds")
-        requestLocation()
-        print("Recording Fall")
+    
+        Event.create(eventType: Event.recordedMeds, associatedFile: "Insert File Here", location: locationString)
+    
+
         //Request permission for microphone use
               recordingSession = AVAudioSession.sharedInstance()
       
@@ -42,8 +40,6 @@ class ReportMedicineInterfaceController: WKInterfaceController, CLLocationManage
                             self.fallRecorder.stop()
                             fallRecorder = nil
                             
-                            uploadPatientFile.uploadPatientData(fileName: audioURL)
-             
                         }
                         
                     } else {
@@ -95,7 +91,7 @@ class ReportMedicineInterfaceController: WKInterfaceController, CLLocationManage
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         manager.delegate = self
-        
+        requestLocation()
     }
     
   
@@ -142,9 +138,13 @@ class ReportMedicineInterfaceController: WKInterfaceController, CLLocationManage
              print("Lat =  \(lastLocationCoordinate.latitude)")
 
              print("Long = \(lastLocationCoordinate.longitude)")
-            //Save location to device
-
-             self.isRequestingLocation = false
+            
+            let lat = lastLocationCoordinate.latitude
+            let long = lastLocationCoordinate.latitude
+            
+            self.locationString = "\(lat) \(long)"
+            
+            self.isRequestingLocation = false
 
          }
         

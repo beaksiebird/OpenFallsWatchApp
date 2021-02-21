@@ -24,6 +24,7 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
     var calledHelpEvent = false
     var audioURL = getRecordingURL()
     var recordFallEvent = false
+    var locationString = String()
 
     
     @IBOutlet weak var fallButtonOutlet: WKInterfaceButton!
@@ -31,8 +32,8 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        
         manager.delegate = self
+        requestLocation()
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
                 print("Watch is connected to wifi or cellular")
@@ -84,8 +85,13 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
              print("Lat =  \(lastLocationCoordinate.latitude)")
 
              print("Long = \(lastLocationCoordinate.longitude)")
-//Save location to device
-             self.isRequestingLocation = false
+            
+            let lat = lastLocationCoordinate.latitude
+            let long = lastLocationCoordinate.latitude
+            
+            self.locationString = "\(lat) \(long)"
+            
+            self.isRequestingLocation = false
 
          }
         
@@ -99,9 +105,7 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
     
 
     @IBAction func recordFall() {
-        recordFallEvent = true 
-        //Save to device
-        requestLocation()
+        Event.create(eventType: Event.recordedFall, associatedFile: "INSERT FILE HERE", location: locationString)
         print("Recording Fall")
         //Request permission for microphone use
               recordingSession = AVAudioSession.sharedInstance()
@@ -118,7 +122,9 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
                             self.fallRecorder.stop()
                             fallRecorder = nil
                             
-                            uploadPatientFile.uploadPatientData(fileName: audioURL)
+                           uploadPatientFile.uploadPatientData(fileName: audioURL)
+                           
+                           
              
                         }
                         
@@ -171,14 +177,8 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
     
   
     @IBAction func callHelp() {
-        calledHelpEvent = true
-        //Save calledHelp to device
-        let date = Date()
-        let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let dateStringCallHelp = df.string(from: date)
-        print(dateStringCallHelp)
-        
+        Event.create(eventType: Event.callHelp, associatedFile: "", location: "")
+    
         print("Calling emergency services")
         let phone = "4047317508"
         if let telURL = URL(string: "tel:\(phone)") {
@@ -205,4 +205,11 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
     }
     
    
+}
+
+extension String {
+    func deletingPrefix(_ prefix: String) -> String {
+        guard self.hasPrefix(prefix) else { return self }
+        return String(self.dropFirst(prefix.count))
+    }
 }
