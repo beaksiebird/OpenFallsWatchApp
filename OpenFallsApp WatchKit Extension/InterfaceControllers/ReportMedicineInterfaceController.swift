@@ -22,7 +22,7 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
  
     @IBAction func recordMeds() {
         print(locationString)
-      
+        let uuid = UUID().uuidString
         //Request permission for microphone use
               recordingSession = AVAudioSession.sharedInstance()
       
@@ -37,11 +37,9 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
                         } else {
                             self.fallRecorder.stop()
                             fallRecorder = nil
-                            Event.create(eventType: Event.recordedMeds, associatedFile: "ADD FILE", location: locationString)
+                            Event.create(eventType: Event.recordedMeds, associatedFile: "\(uuid).m4a", location: locationString)
                             
-                            //Upload recording to AWS
-                        
-                            
+                             uploadPatientFile.uploadPatientData(fileName: audioURL, fileNameOnServer: "\(uuid).m4a")
                         }
                         
                     } else {

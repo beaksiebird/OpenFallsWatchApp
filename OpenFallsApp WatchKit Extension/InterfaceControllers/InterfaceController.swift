@@ -32,8 +32,9 @@ class InterfaceController: WKInterfaceController, UNUserNotificationCenterDelega
 
 
     override func willActivate() {
-       //Upload to AWS
-        
+   //Upload to AWS for now
+        let uuid = UUID().uuidString
+        uploadPatientFile.uploadPatientData(fileName: Logger.logFile! ,fileNameOnServer: "\(uuid).csv")
 
     }
 
