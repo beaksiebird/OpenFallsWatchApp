@@ -17,13 +17,13 @@ struct uploadPatientFile {
         df.dateFormat = "EEE', 'dd' 'MMM' 'yyy' 'HH:mm:ss' 'Z"
         let dateForUploadFunc = df.string(from: date)
         print(dateForUploadFunc)
-        let bucket = "beakbeak1701"
+        let bucket = "openfallstesting"
         let myurl = "https://"+bucket+".s3.amazonaws.com/incoming/" + fileNameOnServer
      
         let configuration = URLSessionConfiguration.default
         let request = NSMutableURLRequest(url: NSURL(string: myurl)! as URL)
             request.httpMethod = "PUT"
-        request.setValue(fileNameOnServer, forHTTPHeaderField: "filename")
+        request.setValue(fileNameOnServer, forHTTPHeaderField: "fileNameOnServer")
         request.addValue(dateForUploadFunc, forHTTPHeaderField: "Date")
         let session = URLSession(configuration: configuration)
         let mData = session.uploadTask(with: request as URLRequest, fromFile: fileName) { (data, response, error) in

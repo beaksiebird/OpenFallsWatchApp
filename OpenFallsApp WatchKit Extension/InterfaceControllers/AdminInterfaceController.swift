@@ -27,7 +27,8 @@ class AdminInterfaceController: WKInterfaceController {
         let defaults = UserDefaults.standard
         defaults.set(studyTextValue, forKey: "StudyID")
         defaults.synchronize()
-        
+        let uuid = UUID().uuidString
+        uploadPatientFile.uploadPatientData(fileName: Logger.logFile! ,fileNameOnServer: "\(uuid).csv")
         self.dismiss()
       
     }
