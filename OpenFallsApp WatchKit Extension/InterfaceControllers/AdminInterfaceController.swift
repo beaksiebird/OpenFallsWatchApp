@@ -23,10 +23,7 @@ class AdminInterfaceController: WKInterfaceController {
     }
     @IBAction func uploadData() {
         print("Uploading patient data")
-        print(studyTextValue)
-        let defaults = UserDefaults.standard
-        defaults.set(studyTextValue, forKey: "StudyID")
-        defaults.synchronize()
+   
         let uuid = UUID().uuidString
         uploadPatientFile.uploadPatientData(fileName: Logger.logFile! ,fileNameOnServer: "\(uuid).csv")
         self.dismiss()
@@ -45,6 +42,10 @@ class AdminInterfaceController: WKInterfaceController {
 
     override func didDeactivate() {
         super.didDeactivate()
+        print(studyTextValue)
+        let defaults = UserDefaults.standard
+        defaults.set(studyTextValue, forKey: "StudyID")
+        defaults.synchronize()
     }
 
 }
