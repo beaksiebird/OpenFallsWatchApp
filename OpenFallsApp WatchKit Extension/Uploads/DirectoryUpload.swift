@@ -9,8 +9,6 @@ import Foundation
 
 
 struct uploadPatientFile {
-//Parameters fileName = file we're uploading,, fileNameOnServer = file name on S3
-
     static func uploadPatientData(fileName: URL, fileNameOnServer: String)  {
         let date = Date()
         let df = DateFormatter()
@@ -58,23 +56,22 @@ class Event {
     static var recordingNoPermissionMeds = "User did not allow recording"
 
     static func create(eventType: String, associatedFile: String, location: String) {
-    
+        print("create : \(eventType)")
         let date = Date()
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let eventDate = df.string(from: date)
         
         //Stored StudyID
+        var storedStudyID = "None Entered"
         if let savedID = UserDefaults.standard.string(forKey: "StudyID") {
-            var storedStudyID = savedID
-            print(storedStudyID)
-            if storedStudyID == "" {
-                storedStudyID = "None Entered"
+            if storedStudyID != "" {
+                storedStudyID = savedID
             }
-         
-            let writtenData = "\(storedStudyID),\(eventType),\(location),\(eventDate),\(associatedFile)\n"
-            Logger.log(writtenData)
+            print("storedStudyID \(storedStudyID)")
         }
+        let writtenData = "\(storedStudyID),\(eventType),\(location),\(eventDate),\(associatedFile)\n"
+        Logger.log(writtenData)
     }
 }
 
@@ -82,29 +79,28 @@ class Logger {
 
     static var logFile: URL? {
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
-  
         let fileName = "databuffer.csv"
         return documentsDirectory.appendingPathComponent(fileName)
     }
 
     static func log(_ message: String) {
-    
+        print("inside actual logger : \(message)")
         guard let logFile = logFile else {
+            print("something got horribly messed up \(message)")
             return
         }
         if !FileManager.default.fileExists(atPath: logFile.path) {
             print("LOG FILE NOT DETECTED.  CREATING NEW LOG FILE AND PUTTING HEADER IN")
             let data = "Study ID,Event Type,Event Location,Event Date/Time,Associated Files\n".data(using: String.Encoding.utf8)
-            try? data!.write(to: logFile, options: .atomicWrite)
+            try! data!.write(to: logFile, options: .atomicWrite)
         }
+        print("log file now exists, I will log this message \(message)")
         if let fileHandle = try? FileHandle(forWritingTo: logFile) {
-    
                 fileHandle.seekToEndOfFile()
                 fileHandle.write(message.data(using: String.Encoding.utf8)!)
                 fileHandle.closeFile()
         } else {
-            print("oh no.  I failed to write this message to log file")
-            print(message)
+            print("Failed to log event --> \(message)")
         }
     }
 }

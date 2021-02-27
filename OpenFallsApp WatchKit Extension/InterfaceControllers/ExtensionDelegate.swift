@@ -14,13 +14,15 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, CLLocationManagerDelegat
   
     
     func applicationDidFinishLaunching() {
+        print("APP LAUNCHED")
         Event.create(eventType: Event.appStart, associatedFile: "N/A", location: "N/A")
-        
+      
     }
     
 
     func applicationDidBecomeActive() {
-      
+
+
     }
     
     

@@ -19,6 +19,14 @@ class AdminInterfaceController: WKInterfaceController {
     @IBAction func enterStudyID(_ value: NSString?) {
         studyIDText.setText(value as String?)
         studyTextValue = value ?? ""
+        
+        let defaults = UserDefaults.standard
+        defaults.register(defaults: ["StudyID": studyTextValue])
+        defaults.set(studyTextValue, forKey: "StudyID")
+        defaults.synchronize()
+        print("DFJKDJFKLDJFLKDJFDKLSJFIOEJFIOEJSFJ")
+        print(defaults.synchronize())
+        print(studyTextValue)
     
     }
     @IBAction func uploadData() {
@@ -42,10 +50,7 @@ class AdminInterfaceController: WKInterfaceController {
 
     override func didDeactivate() {
         super.didDeactivate()
-        print(studyTextValue)
-        let defaults = UserDefaults.standard
-        defaults.set(studyTextValue, forKey: "StudyID")
-        defaults.synchronize()
+     
     }
 
 }
