@@ -87,24 +87,6 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
                 
                }
         }
-    
-    func loadData() {
-        print("load data")
-
-        let medsRequest = NSFetchRequest<Commit>(entityName: "Commit")
-            
-        let sortDescriptor = NSSortDescriptor(key: "timeSinceLastMeds", ascending: false)
-        medsRequest.sortDescriptors = [sortDescriptor]
-             
-        do {
-            try medItems = moc.fetch(medsRequest)
-            print(medItems)
-        }catch {
-            print("Could not load data")
-        }
-        
-    }
-
 
     class func getDocumentsDirectory() -> URL {
          let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -130,10 +112,7 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
         let medsItem = Commit(context: moc)
         medsItem.timeSinceLastMeds = now
         medsItem.setValue(now, forKey: "timeSinceLastMeds")
-        print("FUURURUUURRR")
-        print(now)
         extenDelegate.saveContext()
-        //loadData()
         
     }
     

@@ -58,6 +58,7 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,
                     moc = context.persistentContainer.viewContext
                     let result = try moc.fetch(request)
                     for data in result as! [NSManagedObject] {
+                        //Update label 
                         hoursSinceMeds.setText((data.value(forKey: "timeSinceLastMeds") as! String))
                   }
                     
