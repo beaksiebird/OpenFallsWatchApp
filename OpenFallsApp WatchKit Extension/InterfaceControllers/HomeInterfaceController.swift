@@ -10,12 +10,17 @@ import WatchKit
 import Foundation
 import CoreLocation
 import CoreData
+import UserNotifications
 
 
 
 class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,URLSessionTaskDelegate, URLSessionDataDelegate, URLSessionDelegate {
-    
+ 
     var manager: CLLocationManager!
+    var medItems = [Commit]()
+    var moc: NSManagedObjectContext!
+    let context = WKExtension.shared().delegate as! ExtensionDelegate
+
 
     @IBAction func fallButton() {
         Event.create(eventType: Event.didFall, associatedFile: "N/A", location: "N/A")
@@ -38,10 +43,29 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-  
+        
+      loadData()
         
     }
     
+    func loadData() {
+        print("load data")
+
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Commit")
+                
+                request.returnsObjectsAsFaults = false
+                do {
+                    moc = context.persistentContainer.viewContext
+                    let result = try moc.fetch(request)
+                    for data in result as! [NSManagedObject] {
+                        hoursSinceMeds.setText((data.value(forKey: "timeSinceLastMeds") as! String))
+                  }
+                    
+                } catch {
+                    
+                    print("Failed")
+                }
+    }
 
    
     override func willActivate() {

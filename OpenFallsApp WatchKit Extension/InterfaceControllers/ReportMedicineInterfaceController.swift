@@ -129,8 +129,11 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
          
         let medsItem = Commit(context: moc)
         medsItem.timeSinceLastMeds = now
+        medsItem.setValue(now, forKey: "timeSinceLastMeds")
+        print("FUURURUUURRR")
+        print(now)
         extenDelegate.saveContext()
-        loadData()
+        //loadData()
         
     }
     
