@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2E8E74E3077F661F81C8365F /* Pods_OpenFallsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADE10D46E490E273931E447 /* Pods_OpenFallsApp.framework */; };
+		3B1EE11925F6FCDE00039AB6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1EE11825F6FCDE00039AB6 /* CoreData.framework */; };
+		3B1EE13425F7078B00039AB6 /* OFModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EE13225F7078B00039AB6 /* OFModel.xcdatamodeld */; };
+		3B1EE13525F7078B00039AB6 /* OFModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EE13225F7078B00039AB6 /* OFModel.xcdatamodeld */; };
 		3B25774625C0A1A0001FEED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25774525C0A1A0001FEED6 /* AppDelegate.swift */; };
 		3B25774825C0A1A0001FEED6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25774725C0A1A0001FEED6 /* SceneDelegate.swift */; };
 		3B25774A25C0A1A0001FEED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25774925C0A1A0001FEED6 /* ViewController.swift */; };
@@ -27,6 +30,8 @@
 		3B25778C25C0A38B001FEED6 /* HomeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25778B25C0A38B001FEED6 /* HomeInterfaceController.swift */; };
 		3B25779125C0A3DF001FEED6 /* ReportFallInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25779025C0A3DF001FEED6 /* ReportFallInterfaceController.swift */; };
 		3B25779625C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25779525C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift */; };
+		3B64F86725FD18BC00EB1128 /* Commit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B64F86525FD18BC00EB1128 /* Commit+CoreDataClass.swift */; };
+		3B64F86825FD18BC00EB1128 /* Commit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B64F86625FD18BC00EB1128 /* Commit+CoreDataProperties.swift */; };
 		3B813EC025D76745006EEA8A /* DirectoryUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B813EBF25D76745006EEA8A /* DirectoryUpload.swift */; };
 		3B88D0E925D972A500CDAE16 /* DynamicNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B88D0E825D972A500CDAE16 /* DynamicNotificationController.swift */; };
 		3B88D0EE25D972E900CDAE16 /* DynamicInteractiveNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B88D0ED25D972E900CDAE16 /* DynamicInteractiveNotificationController.swift */; };
@@ -79,6 +84,8 @@
 /* Begin PBXFileReference section */
 		0791E0D6933B95077A655DD7 /* Pods-OpenFallsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenFallsApp.debug.xcconfig"; path = "Target Support Files/Pods-OpenFallsApp/Pods-OpenFallsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		111988617136259A634EB54B /* Pods-OpenFallsApp WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenFallsApp WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-OpenFallsApp WatchKit App/Pods-OpenFallsApp WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		3B1EE11825F6FCDE00039AB6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.2.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		3B1EE13325F7078B00039AB6 /* OFModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OFModel.xcdatamodel; sourceTree = "<group>"; };
 		3B25774225C0A1A0001FEED6 /* OpenFallsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenFallsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B25774525C0A1A0001FEED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B25774725C0A1A0001FEED6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +110,9 @@
 		3B25778B25C0A38B001FEED6 /* HomeInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInterfaceController.swift; sourceTree = "<group>"; };
 		3B25779025C0A3DF001FEED6 /* ReportFallInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFallInterfaceController.swift; sourceTree = "<group>"; };
 		3B25779525C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportMedicineInterfaceController.swift; sourceTree = "<group>"; };
+		3B64F86425FD18BC00EB1128 /* OpenFallsApp WatchKit App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenFallsApp WatchKit App-Bridging-Header.h"; sourceTree = "<group>"; };
+		3B64F86525FD18BC00EB1128 /* Commit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		3B64F86625FD18BC00EB1128 /* Commit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		3B813EBF25D76745006EEA8A /* DirectoryUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryUpload.swift; sourceTree = "<group>"; };
 		3B88D0E825D972A500CDAE16 /* DynamicNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicNotificationController.swift; sourceTree = "<group>"; };
 		3B88D0ED25D972E900CDAE16 /* DynamicInteractiveNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicInteractiveNotificationController.swift; sourceTree = "<group>"; };
@@ -138,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D36B4C59176ADCDF4CC9C45 /* Pods_OpenFallsApp_WatchKit_Extension.framework in Frameworks */,
+				3B1EE11925F6FCDE00039AB6 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,11 +204,15 @@
 		3B25776925C0A1A0001FEED6 /* OpenFallsApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3B64F86525FD18BC00EB1128 /* Commit+CoreDataClass.swift */,
+				3B64F86625FD18BC00EB1128 /* Commit+CoreDataProperties.swift */,
+				3B1EE13225F7078B00039AB6 /* OFModel.xcdatamodeld */,
 				3B88D0E425D970BA00CDAE16 /* Uploads */,
 				3B88D0E325D970AD00CDAE16 /* InterfaceControllers */,
 				3B88D0E225D9709000CDAE16 /* Notifications */,
 				3B25777425C0A1A1001FEED6 /* Info.plist */,
 				3B25777225C0A1A1001FEED6 /* Assets.xcassets */,
+				3B64F86425FD18BC00EB1128 /* OpenFallsApp WatchKit App-Bridging-Header.h */,
 			);
 			path = "OpenFallsApp WatchKit Extension";
 			sourceTree = "<group>";
@@ -251,6 +266,7 @@
 		D43C4913F8C3875CAD6F54E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B1EE11825F6FCDE00039AB6 /* CoreData.framework */,
 				3B88D0FA25D99E5C00CDAE16 /* CryptoKit.framework */,
 				7ADE10D46E490E273931E447 /* Pods_OpenFallsApp.framework */,
 				97177290D674C29908A898F2 /* Pods_OpenFallsApp_WatchKit_App.framework */,
@@ -333,6 +349,7 @@
 					};
 					3B25775525C0A1A0001FEED6 = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1240;
 					};
 					3B25776425C0A1A0001FEED6 = {
 						CreatedOnToolsVersion = 12.3;
@@ -465,6 +482,7 @@
 			files = (
 				3B25774A25C0A1A0001FEED6 /* ViewController.swift in Sources */,
 				3B25774625C0A1A0001FEED6 /* AppDelegate.swift in Sources */,
+				3B1EE13425F7078B00039AB6 /* OFModel.xcdatamodeld in Sources */,
 				3B25774825C0A1A0001FEED6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +493,7 @@
 			files = (
 				3B813EC025D76745006EEA8A /* DirectoryUpload.swift in Sources */,
 				3B25776F25C0A1A0001FEED6 /* NotificationController.swift in Sources */,
+				3B64F86825FD18BC00EB1128 /* Commit+CoreDataProperties.swift in Sources */,
 				3B88D0E925D972A500CDAE16 /* DynamicNotificationController.swift in Sources */,
 				3B25779625C0A3FB001FEED6 /* ReportMedicineInterfaceController.swift in Sources */,
 				3B25777125C0A1A0001FEED6 /* ComplicationController.swift in Sources */,
@@ -483,6 +502,8 @@
 				3B25776D25C0A1A0001FEED6 /* ExtensionDelegate.swift in Sources */,
 				3B25776B25C0A1A0001FEED6 /* InterfaceController.swift in Sources */,
 				3B25778C25C0A38B001FEED6 /* HomeInterfaceController.swift in Sources */,
+				3B1EE13525F7078B00039AB6 /* OFModel.xcdatamodeld in Sources */,
+				3B64F86725FD18BC00EB1128 /* Commit+CoreDataClass.swift in Sources */,
 				3B25778725C0A372001FEED6 /* AdminInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,7 +669,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = MZ98WPC7GY;
 				INFOPLIST_FILE = "OpenFallsApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -673,7 +694,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = MZ98WPC7GY;
 				INFOPLIST_FILE = "OpenFallsApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -700,16 +721,24 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = MZ98WPC7GY;
 				IBSC_MODULE = OpenFallsApp_WatchKit_Extension;
 				INFOPLIST_FILE = "OpenFallsApp WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Beaksie.OpenFallsApp.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenFallsApp WatchKit Extension/OpenFallsApp WatchKit App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 7.0;
@@ -723,16 +752,23 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = MZ98WPC7GY;
 				IBSC_MODULE = OpenFallsApp_WatchKit_Extension;
 				INFOPLIST_FILE = "OpenFallsApp WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Beaksie.OpenFallsApp.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenFallsApp WatchKit Extension/OpenFallsApp WatchKit App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
@@ -747,7 +783,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = MZ98WPC7GY;
 				INFOPLIST_FILE = OpenFallsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -771,7 +807,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = MZ98WPC7GY;
 				INFOPLIST_FILE = OpenFallsApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
@@ -829,6 +865,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3B1EE13225F7078B00039AB6 /* OFModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3B1EE13325F7078B00039AB6 /* OFModel.xcdatamodel */,
+			);
+			currentVersion = 3B1EE13325F7078B00039AB6 /* OFModel.xcdatamodel */;
+			name = OFModel.xcdatamodeld;
+			path = ../OFModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3B25773A25C0A1A0001FEED6 /* Project object */;
 }

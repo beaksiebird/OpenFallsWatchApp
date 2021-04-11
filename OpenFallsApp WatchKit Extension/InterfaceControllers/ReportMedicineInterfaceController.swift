@@ -8,6 +8,8 @@ import WatchKit
 import Foundation
 import AVFoundation
 import CoreLocation
+import CoreData
+
 
 
 class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderDelegate, CLLocationManagerDelegate {
@@ -19,8 +21,15 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
     var isRequestingLocation = false
     var userLocation: CLLocation?
     var locationString = String()
- 
+    var moc: NSManagedObjectContext!
+    var medItems = [Commit]()
+    let extenDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+    
+    
+   
+
     @IBAction func recordMeds() {
+ 
         print(locationString)
         let uuid = UUID().uuidString
         //Request permission for microphone use
@@ -79,7 +88,23 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
                }
         }
     
-   
+    func loadData() {
+        print("load data")
+
+        let medsRequest = NSFetchRequest<Commit>(entityName: "Commit")
+            
+        let sortDescriptor = NSSortDescriptor(key: "timeSinceLastMeds", ascending: false)
+        medsRequest.sortDescriptors = [sortDescriptor]
+             
+        do {
+            try medItems = moc.fetch(medsRequest)
+            print(medItems)
+        }catch {
+            print("Could not load data")
+        }
+        
+    }
+
 
     class func getDocumentsDirectory() -> URL {
          let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -96,8 +121,21 @@ class ReportMedicineInterfaceController: WKInterfaceController, AVAudioRecorderD
         super.awake(withContext: context)
         manager.delegate = self
         requestLocation()
+        moc = extenDelegate.persistentContainer.viewContext
+        
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let now = df.string(from: Date())
+         
+        let medsItem = Commit(context: moc)
+        medsItem.timeSinceLastMeds = now
+        extenDelegate.saveContext()
+        loadData()
+        
     }
     
+   
+   
   
     override func willActivate() {
         super.willActivate()

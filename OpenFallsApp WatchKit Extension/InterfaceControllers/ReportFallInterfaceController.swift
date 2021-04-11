@@ -183,7 +183,7 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
         Event.create(eventType: Event.callHelp, associatedFile: "N/A", location: locationString)
 
         print("Calling emergency services")
-        let phone = ""
+        let phone = "404-550-5157"
         if let telURL = URL(string: "tel:\(phone)") {
             let wkExt = WKExtension.shared()
             wkExt.openSystemURL(telURL)

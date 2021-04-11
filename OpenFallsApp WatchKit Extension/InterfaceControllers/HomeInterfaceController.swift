@@ -9,14 +9,14 @@
 import WatchKit
 import Foundation
 import CoreLocation
+import CoreData
+
 
 
 class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,URLSessionTaskDelegate, URLSessionDataDelegate, URLSessionDelegate {
     
     var manager: CLLocationManager!
 
-
-  
     @IBAction func fallButton() {
         Event.create(eventType: Event.didFall, associatedFile: "N/A", location: "N/A")
         let controllers = "reportFallScreen"
@@ -38,21 +38,26 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+  
         
     }
     
+
    
     override func willActivate() {
         super.willActivate()
-    
+
     }
+    
     
     override func didDeactivate() {
         super.didDeactivate()
+        
+  
     
     }
     
-
-
+  
+  
 }
 

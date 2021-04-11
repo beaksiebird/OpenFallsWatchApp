@@ -6,17 +6,41 @@
 //
 
 import WatchKit
-
-
-
+import CoreData
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate, CLLocationManagerDelegate  {
-  
+    var container: NSPersistentContainer!
     
     func applicationDidFinishLaunching() {
         print("APP LAUNCHED")
         Event.create(eventType: Event.appStart, associatedFile: "N/A", location: "N/A")
       
+       
+    }
+    
+  
+    lazy var persistentContainer: NSPersistentContainer = {
+    // 2
+            let container = NSPersistentContainer(name: "OFModel")
+            container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+    if let error = error as NSError? {
+    fatalError("Unresolved error \(error), \(error.userInfo)")
+                }
+            })
+    return container
+    }()
+    
+    func saveContext () {
+            let context = persistentContainer.viewContext
+            if context.hasChanges {
+                do {
+                    try context.save()
+                } catch {
+                    
+                    let nserror = error as NSError
+                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                }
+            }
     }
     
 

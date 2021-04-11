@@ -10,7 +10,9 @@ import Foundation
 import UserNotifications
 import CoreLocation
 
+
 class InterfaceController: WKInterfaceController, UNUserNotificationCenterDelegate {
+    
 
     @IBAction func toPatientScreen() {
         let controllers = "homeScreen"
@@ -32,10 +34,12 @@ class InterfaceController: WKInterfaceController, UNUserNotificationCenterDelega
 
 
     override func willActivate() {
-
+   
+        
 
     }
-
+    
+  
     
     override func didDeactivate() {
        
