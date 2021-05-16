@@ -44,7 +44,6 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-      loadData()
         
     }
     
@@ -71,7 +70,7 @@ class HomeInterfaceController: WKInterfaceController, CLLocationManagerDelegate,
    
     override func willActivate() {
         super.willActivate()
-
+            loadData()
     }
     
     

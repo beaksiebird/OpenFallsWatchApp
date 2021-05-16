@@ -13,6 +13,7 @@ import CoreLocation
 
 
 
+
 class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDelegate, CLLocationManagerDelegate {
     
     let manager = CLLocationManager()
@@ -20,34 +21,36 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
     var userLocation: CLLocation?
     var recordingSession: AVAudioSession!
     var fallRecorder: AVAudioRecorder!
-    let monitor = NWPathMonitor()
+   // let monitor = NWPathMonitor()
     var calledHelpEvent = false
     var audioURL = getRecordingURL()
     var recordFallEvent = false
     var locationString = String()
+
 
     
     @IBOutlet weak var fallButtonOutlet: WKInterfaceButton!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+//        monitor.pathUpdateHandler = { path in
+//            if path.status != .satisfied {
+//                print("No connectivity")
+//                self.callForHelpLabel.setText("No WIFI or cellular connection")
+//                self.callHelpButton.setEnabled(false)
+//                self.callHelpButton.setAlpha(0.5)
+//            } else {
+//                print("Watch is connected to wifi or cellular")
+//            }
+//
+//        }
+//
+//        let queue = DispatchQueue(label: "Monitor")
+//        monitor.start(queue: queue)
         
         manager.delegate = self
         requestLocation()
-        monitor.pathUpdateHandler = { path in
-            if path.status == .satisfied {
-                print("Watch is connected to wifi or cellular")
-            } else {
-                print("No connectivity")
-                self.callForHelpLabel.setText("No WIFI or cellular connection")
-                self.callHelpButton.setEnabled(false)
-                self.callHelpButton.setAlpha(0.5)
-            }
-            
-        }
-        
-        let queue = DispatchQueue(label: "Monitor")
-        monitor.start(queue: queue)
+  
     }
     
     func requestLocation() {
@@ -198,6 +201,7 @@ class ReportFallInterfaceController: WKInterfaceController, AVAudioRecorderDeleg
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+   
     }
 
     override func didDeactivate() {
