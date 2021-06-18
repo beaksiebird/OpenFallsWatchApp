@@ -55,8 +55,10 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       notificationPayloadFile = "OpenFallsApp WatchKit Extension/Notifications/PushNotificationPayload.apns">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/OpenFalls">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3B25775525C0A1A0001FEED6"
@@ -64,7 +66,7 @@
             BlueprintName = "OpenFallsApp WatchKit App"
             ReferencedContainer = "container:OpenFallsApp.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
       <LocationScenarioReference
          identifier = "New York, NY, USA"
          referenceType = "1">
@@ -76,8 +78,10 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/OpenFalls">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3B25775525C0A1A0001FEED6"
@@ -85,7 +89,16 @@
             BlueprintName = "OpenFallsApp WatchKit App"
             ReferencedContainer = "container:OpenFallsApp.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3B25775525C0A1A0001FEED6"
+            BuildableName = "OpenFallsApp WatchKit App.app"
+            BlueprintName = "OpenFallsApp WatchKit App"
+            ReferencedContainer = "container:OpenFallsApp.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

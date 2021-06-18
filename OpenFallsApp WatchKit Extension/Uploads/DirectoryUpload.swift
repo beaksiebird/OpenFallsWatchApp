@@ -21,8 +21,10 @@ struct uploadPatientFile {
         let configuration = URLSessionConfiguration.default
         let request = NSMutableURLRequest(url: NSURL(string: myurl)! as URL)
             request.httpMethod = "PUT"
+        
         request.setValue(fileNameOnServer, forHTTPHeaderField: "fileNameOnServer")
         request.addValue(dateForUploadFunc, forHTTPHeaderField: "Date")
+        request.addValue("bucket-owner-full-control", forHTTPHeaderField: "x-amz-acl")
         let session = URLSession(configuration: configuration)
         let mData = session.uploadTask(with: request as URLRequest, fromFile: fileName) { (data, response, error) in
             if let res = response as? HTTPURLResponse {
